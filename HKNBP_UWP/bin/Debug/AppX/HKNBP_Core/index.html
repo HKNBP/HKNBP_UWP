@@ -1,0 +1,1168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ HKNBP_Core is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ HKNBP_Core is distributed in the hope that it will be useful,
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with HKNBP_Core.  If not, see <https://www.gnu.org/licenses/>.
+  -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <!--PWA-->
+    <link rel="manifest" href="manifest.json">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <!--iOS（safari）-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="香港網路廣播平台">
+    <link rel="apple-touch-icon" href="img/icons/book-256.png">
+
+    <meta http-equiv="Access-Control-Allow-Origin" content="*"/>
+    <meta http-equiv="Access-Control-Allow-Methods" content="GET, PUT, POST, DELETE, OPTIONS"/>
+    <meta http-equiv="Access-Control-Allow-Headers" content="DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range"/>
+
+    <!--允許讀URL為http協定嘅資料(唔係https)-->
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+    <title>香港網路廣播平台</title>
+    <meta name="description" content="This is an example of a meta description. This will often show up in search results.">
+
+    <!--Google Analytics-->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)
+        [0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-114310838-2', 'auto');
+      ga(function(tracker) {
+          // Gets the client ID of the default tracker.
+          var clientId = tracker.get('clientId');
+
+          // Gets a reference to the window object of the destionation iframe.
+          var frameWindow = document.getElementById('iframeWatchingCounter').contentWindow;
+
+          // Sends the client ID to the window inside the destination frame.
+          frameWindow.postMessage(clientId, 'https://hknbp.org/');
+      });
+    </script>
+
+    <style>
+    ::cue{
+      background: rgba(0, 0, 0, 0);
+    }
+    #epg div{
+      text-align: left;
+    }
+    #epgProgrammeListTimeLine div{
+      white-space: nowrap;
+      width: max-content;
+    }
+    #epgProgrammeListTimeLine div .time{
+      display: inline-block;
+      width: 30vh;
+    }
+    #epgProgrammeListTimeLine div .time button{
+      background-color: #222222;
+      border: 0vh;
+      color: #FFFFFF;
+      font-weight: bold;
+      font-size: 4vh;
+      padding: 0vh;
+      overflow: hidden;
+      text-align: left;
+      width: inherit; height:5.5vh;
+      margin: 0.2vh;
+    }
+    #epgProgrammeListChannelList div{
+      white-space: nowrap;
+      width: 100%;
+    }
+    #epgProgrammeListChannelList div .channelNumber{
+      display: inline-block;
+      width: 8vh;
+    }
+    #epgProgrammeListChannelList div .channelNumber button{
+      background-color: #222222;
+      border: 0vh;
+      color: #FFFFFF;
+      font-weight: bold;
+      font-size: 4vh;
+      padding: 0vh;
+      overflow: hidden;
+      text-align: left;
+      width: inherit; height:5.5vh;
+      margin: 0.2vh;
+    }
+    #epgProgrammeListChannelList div .channelName{
+      display: inline-block;
+      width: 22vh;
+    }
+    #epgProgrammeListChannelList div .channelName button{
+      background-color: #222222;
+      border: 0vh;
+      color: #FFFFFF;
+      font-weight: bold;
+      font-size: 4vh;
+      padding: 0vh;
+      overflow: hidden;
+      text-align: left;
+      width: inherit; height:5.5vh;
+      margin: 0.2vh;
+    }
+    #epgProgrammeListTable div{
+      white-space: nowrap;
+      width: max-content; //height: 5.4vh;
+      //border: 0vh;//padding: 0vh;//margin: 0vh;
+    }
+    #epgProgrammeListTable div .programme{
+      display: inline-block;
+    }
+    #epgProgrammeListTable div .programme button{
+      background-color: #333333;
+      border: 0vh;
+      color: #FFFFFF;
+      font-weight: bold;
+      font-size: 4vh;
+      //padding: 0vh;
+      overflow: hidden;
+      text-align: left;
+      width: inherit; height:5.5vh;
+      margin: 0vh;
+    }
+    #shareWindowShareButtonList a{
+        padding: 0vh;
+        margin: 0vh;
+    }
+    #shareWindowShareButtonList a img{
+        width:10vh; height:10vh;
+    }
+    #virtualRemote div{
+      //display:inline;
+      //border: 1vh solid red;
+      margin: auto;
+      padding: 0.7vh;
+      text-align: center;
+      vertical-align: middle;
+    }
+    .nestle-bottom{
+      margin-bottom: 0vh;
+      padding-bottom: 0vh;
+    }
+    .nestle-top{
+      margin-top: 0vh;
+      padding-top: 0vh;
+    }
+    button.normal{
+      font-size: 6vh;
+    }
+    button.small{
+      font-size: 4vh;
+      margin: 1vh;
+      padding: 1vh;
+      width: auto;
+    }
+    button.fourRow{
+      font-size: 3.5vh;
+      height:5vh;
+    }
+    a{
+        color: #FFF;
+    }
+    @font-face {
+      font-family: 'fontello';
+      src: url('./font/fontello.eot?23602108');
+      src: url('./font/fontello.eot?23602108#iefix') format('embedded-opentype'),
+      url('./font/fontello.woff?23602108') format('woff'),
+      url('./font/fontello.ttf?23602108') format('truetype'),
+      url('./font/fontello.svg?23602108#fontello') format('svg');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    div{
+      text-align: center;
+      vertical-align: middle;
+      overflow: hidden;
+    }
+    .center{
+      min-width:0vh;
+      display: table-cell;
+      text-align: center;
+      vertical-align: middle;
+      white-space: nowrap;
+    }
+    .absoluteTopLeft{
+        position: absolute;
+        top:0; left:0;
+    }
+    .absoluteTop{
+        position: absolute;
+        top:0; left:50%;
+        transform: translate(-50%, 0);
+    }
+    .absoluteTopRight{
+        position: absolute;
+        top:0; right:0;
+    }
+    .absoluteLeft{
+        position: absolute;
+        top:50%; left:0;
+        transform: translate(0, -50%);
+    }
+    .absoluteCenter{
+        position: absolute;
+        top:50%; left:50%;
+        transform: translate(-50%, -50%);
+    }
+    .absoluteRight{
+        position: absolute;
+        top:50%; right:0;
+        transform: translate(0, -50%);
+    }
+    .absoluteBottomLeft{
+        position: absolute;
+        Bottom:0; left:0;
+    }
+    .absoluteBottom{
+        position: absolute;
+        Bottom:0; left:50%;
+        transform: translate(-50%, 0);
+    }
+    .absoluteBottomRight{
+        position: absolute;
+        Bottom:0; right:0;
+    }
+    .contentPenetrateY{
+      min-heigh:0vh;
+      overflow: hidden;
+    }
+    .contentPenetrateX{
+      min-width:0vh;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .contentPenetrateX div{
+      width: max-content;
+    }
+    button{
+      background: #292929;
+      border: 0vh solid black;
+      color: #FFFFFF;
+      width: 100%;
+    }
+    select{
+      background-color: rgba(35,35,35,1);
+      border: 0vh solid #fff;
+      color: #FFFFFF;
+      padding: .5vh;
+    }
+    option{
+      background-color: rgba(20,20,20,1);
+      color: #FFFFFF;
+    }
+    input{
+        background: #444444;
+        border: 0vh solid black;
+        color: #FFFFFF;
+    }
+    button:hover, select:hover, option:hover, input:hover{
+        filter: saturate(150%) drop-shadow(0vh 0vh 0.5vh #5AF) drop-shadow(0vh 0vh 0vh #5AF);
+    }
+
+    i.icon-font{
+      font-family: "fontello";
+      font-style: normal;
+      font-weight: normal;
+      speak: none;
+
+      display: inline-block;
+      text-decoration: inherit;
+      width: 1em;
+      text-align: center;
+      /* opacity: .8; */
+
+      /* For safety - reset parent styles, that can break glyph codes*/
+      font-variant: normal;
+      text-transform: none;
+
+      /* fix buttons height, for twitter bootstrap */
+      //line-height: 1em;
+
+      /* You can be more comfortable with increased icons size */
+      font-size: 100%;
+
+      /* Font smoothing. That was taken from TWBS */
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+
+      /* Uncomment for 3D effect */
+      /* text-shadow: .1vh .1vh .1vh rgba(127, 127, 127, 0.3); */
+    }
+
+    /* Scroll Bar 效果*/
+    /* width & height */
+    ::-webkit-scrollbar {
+      width: .7vh; height: .7vh;
+    }
+    /* Track */
+    ::-webkit-scrollbar-track {
+      background: #303030;
+    }
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: #777777;
+    }
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: #DDDDDD;
+    }
+
+    /* Div Table */
+    .css-table{
+      display: table;
+      width: 97%;
+    }
+    .css-table .thead{
+      display:table-header-group;
+    }
+    .css-table .tbody{
+      display:table-row-group;
+    }
+    .css-table .tr{
+      display:table-row;
+    }
+    .css-table .th, .css-table .td{
+      display:table-cell;
+    }
+    </style>
+</head>
+
+<body id="body"
+      style="
+        background-color:#000;
+        color: #FFFFFF;
+        //font-weight: bold;
+        font-size: 4vh;
+        font-family: FreeSans;
+        margin:0vh;
+        overflow: hidden;
+        position: absolute;
+        top:0; bottom:0; left:0; right:0;
+        //text-transform: full-size-kana;
+        /* disable text selection highlighting */
+        -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-select  : none; /* Safari */
+        -khtml-user-select   : none; /* Konqueror HTML */
+        -moz-user-select     : none; /* Firefox */
+        -ms-user-select      : none; /* Internet Explorer/Edge */
+        user-select          : none; /* Non-prefixed version, currently supported by Chrome and Opera */
+       "
+>
+<div id="player" style="
+         overflow: hidden;
+         position: absolute;
+         top:0; bottom:0; left:0; right:0;
+         z-index:20;
+       ">
+    <iframe
+            id="iframePlayer"
+            style="width:100%; height:100%; position:absolute; top:0; left:0; overflow:hidden;"
+            frameBorder="0"
+            allow="autoplay; fullscreen;">
+        你嘅瀏覽器唔支援iframe
+    </iframe>
+</div>
+<div id="userInterface">
+    <button id="userControlPanelShower" tabindex="000000001" style="
+              //display: none;
+              background: rgba(0, 0, 0, 0);
+              border-style: none;
+              outline:none;
+              //pointer-events: none;
+              position: absolute;
+              top:0; bottom:0; left:0; right:50vh;
+              width:100%; height:100vh;
+              z-index: 30;
+          " autofocus>
+    </button>
+    <div id="userControlPanel" style="display: none;">
+        <div id="virtualRemote" style="
+                  background: #303030;
+                  display: block;
+                  top:0; left:0;
+                  overflow: scroll;
+                  position:absolute;
+                  width: 45vh; height: 100%;
+                  z-index: 50;
+            ">
+            <div class="css-table">
+                <div class="th" style="height:100%">
+                    <button tabindex="100000000" class="fourRow" style="background: #1C1C1C; height: 5.5vh" id="hideVirtualRemoteButton"><i
+                            class="icon-font">&#xe81f;</i></button>
+                </div>
+                <div class="th" style="height:100%">
+                    <button tabindex="100000001" class="fourRow" id="epgButton" style="height: 5.5vh"><i class="icon-font">&#xe808;</i>
+                    </button>
+                </div>
+                <div class="th" style="height:100%">
+                    <button tabindex="100000002" class="fourRow" id="onHeadNextSubtitleButton" style="height: 5.5vh"><i class="icon-font">&#xe81d;</i>
+                    </button>
+                </div>
+                <div class="th" style="height:100%">
+                    <button tabindex="100000003" class="fourRow" id="onHeadNextAudioButton" style="height: 5.5vh"><i class="icon-font">&#xe81c;</i>
+                    </button>
+                </div>
+            </div>
+            <div class="css-table">
+                <div class="th" style="height:100%">
+                    <button tabindex="100010000" class="normal" id="volumeUpButton" style="padding-top:5vh; padding-bottom:5vh;"><i
+                            class="icon-font">&#xe804;</i></button>
+                    <button tabindex="100020000" class="normal" id="volumeDownButton" style="padding-top: 5vh; padding-bottom: 5vh;"><i
+                            class="icon-font">&#xe803;</i></button>
+                </div>
+                <div class="th">
+                    <button tabindex="100010001" class="small" id="lastTimeChannelButton"><i class="icon-font">&#xe81e;</i></button>
+                    <button tabindex="100020001" class="small" id="volumeMuteButton"><i class="icon-font">&#xe809;</i></button>
+                </div>
+                <div class="th" style="height:100%">
+                    <button tabindex="100010002" class="normal" id="nextChannelButton" style="padding-top: 5vh; padding-bottom: 5vh;"><i
+                            class="icon-font">&#xe806;</i></button>
+                    <button tabindex="100020002" class="normal" id="previousChannelButton" style="padding-top: 5vh; padding-bottom: 5vh;"><i
+                            class="icon-font">&#xe805;</i></button>
+                </div>
+            </div>
+            <div class="css-table">
+                <div class="th" style="height:100%">
+                    <button tabindex="100030000" class="fourRow" id="programmableRedButton" style="background: #AA1111;"></button>
+                </div>
+                <div class="th" style="height:100%">
+                    <button tabindex="100030001" class="fourRow" id="programmableGreenButton" style="background: #11AA11;"></button>
+                </div>
+                <div class="th" style="height:100%">
+                    <button tabindex="100030002" class="fourRow" id="programmableYellowButton" style="background: #DDB000;"></button>
+                </div>
+                <div class="th" style="height:100%">
+                    <button tabindex="100030003" class="fourRow" id="programmableBlueButton" style="background: #4444DD;"></button>
+                </div>
+            </div>
+            <div class="css-table">
+                <div class="css-table">
+                    <div class="th" style="height:100%">
+                        <button tabindex="100040000" class="normal" id="number1Button">1</button>
+                    </div>
+                    <div class="th" style="height:100%">
+                        <button tabindex="100040001" class="normal" id="number2Button">2</button>
+                    </div>
+                    <div class="th" style="height:100%">
+                        <button tabindex="100040002" class="normal" id="number3Button">3</button>
+                    </div>
+                </div>
+                <div class="css-table">
+                    <div class="th" style="height:100%">
+                        <button tabindex="100050000" class="normal" id="number4Button">4</button>
+                    </div>
+                    <div class="th" style="height:100%">
+                        <button tabindex="100050001" class="normal" id="number5Button">5</button>
+                    </div>
+                    <div class="th" style="height:100%">
+                        <button tabindex="100050002" class="normal" id="number6Button">6</button>
+                    </div>
+                </div>
+                <div class="css-table">
+                    <div class="th" style="height:100%">
+                        <button tabindex="100060000" class="normal" id="number7Button">7</button>
+                    </div>
+                    <div class="th" style="height:100%">
+                        <button tabindex="100060001" class="normal" id="number8Button">8</button>
+                    </div>
+                    <div class="th" style="height:100%">
+                        <button tabindex="100060002" class="normal" id="number9Button">9</button>
+                    </div>
+                </div>
+                <div class="css-table">
+                    <div class="th" style="width: 33%; height:100%">
+                        <button tabindex="100070000" style="font-size: 4.5vh; padding: 0.9vh;" id="refreshButton"><i class="icon-font">&#xe80d;</i>
+                        </button>
+                    </div>
+                    <div class="th" style="width: 33%; height:100%">
+                        <button tabindex="100070001" class="normal" id="number0Button">0</button>
+                    </div>
+                    <div class="th" style="width: 33%; height:100%">
+                        <button tabindex="100070002" id="tvChannelDescriptionButton" style="font-size: 4.5vh; padding: 0.9vh;"><i
+                                class="icon-font">&#xf129;</i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="css-table">
+                <div class="th" style="height:100%">
+                    <select tabindex="100080000" id="designateChannelSelect" style="font-size:4vh;height:8vh;width:100%;">
+                        <option>-------</option>
+                    </select>
+                </div>
+            </div>
+            <div class="css-table">
+                <div class="th" style="height:100%; margin-right: 0vh; padding-right: 0vh;">
+                    <input tabindex="100090000" id="designateChannelInputText" type="number" placeholder="頻道"
+                           style="font-size:6vh;width:100%;">
+                </div>
+                <div class="th" style="height:100%; margin-left: 0vh; padding-left: 0vh;">
+                    <button tabindex="100090001" class="normal" id="designateChannelButton"><i class="icon-font" style="padding: 0.3vh;">&#xe800;</i>
+                    </button>
+                </div>
+            </div>
+            <div class="css-table">
+                <div class="tr nestle-bottom">
+                    <div class="th nestle-bottom" style="height:100%;">
+                        <i class="icon-font nestle-bottom" style="font-size: 3.5vh;">&#xe81d;</i>
+                    </div>
+                    <div class="th nestle-bottom" style="height:100%;">
+                        <i class="icon-font nestle-bottom" style="font-size: 3.5vh;">&#xe81c;</i>
+                    </div>
+                    <div class="th nestle-bottom" style="height:100%;">
+                        <i class="icon-font nestle-bottom" style="font-size: 3.5vh;">&#xe815;</i>
+                    </div>
+                </div>
+                <div class="tr nestle-bottom">
+                    <div class="th nestle-bottom" style="height:100%;">
+                        <button tabindex="100100000" class="normal" id="nextSubtitleButton"><i class="icon-font nestle-bottom">&#xe806;</i>
+                        </button>
+                    </div>
+                    <div class="th nestle-bottom" style="height:100%;">
+                        <button tabindex="100100001" class="normal" id="nextAudioButton"><i class="icon-font nestle-bottom">&#xe806;</i>
+                        </button>
+                    </div>
+                    <div class="th nestle-bottom" style="height:100%;">
+                        <button tabindex="100100002" class="normal" id="nextVideoButton"><i class="icon-font nestle-bottom">&#xe806;</i>
+                        </button>
+                    </div>
+                </div>
+                <div class="tr nestle-bottom nestle-top">
+                    <div class="th nestle-bottom nestle-top" style="width: 33%; height:100%">
+                        <select tabindex="100110000" id="designateSubtitleSelect" style="font-size:4vh;width:100%;">
+                            <option>-------</option>
+                        </select>
+                    </div>
+                    <div class="th nestle-bottom nestle-top" style="width: 33%; height:100%">
+                        <select tabindex="100110001" id="designateAudioSelect" style="font-size:4vh;width:100%;">
+                            <option>-------</option>
+                        </select>
+                    </div>
+                    <div class="th nestle-bottom nestle-top" style="width: 33%; height:100%">
+                        <select tabindex="100110002" id="designateVideoSelect" style="font-size:4vh;width:100%;">
+                            <option>-------</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="tr nestle-top">
+                    <div class="th nestle-top" style="height:100%">
+                        <button tabindex="100120000" class="normal" id="previousSubtitleButton"><i class="icon-font nestle-top">&#xe805;</i>
+                        </button>
+                    </div>
+                    <div class="th nestle-top" style="height:100%">
+                        <button tabindex="100120001" class="normal" id="previousAudioButton"><i class="icon-font nestle-top">&#xe805;</i>
+                        </button>
+                    </div>
+                    <div class="th nestle-top" style="height:100%">
+                        <button tabindex="100120002" class="normal" id="previousVideoButton"><i class="icon-font nestle-top">&#xe805;</i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="css-table">
+                <div class="css-table">
+                    <div class="th" style="height:100%">
+                        <button tabindex="100130000" id="aboutWindowButton" class="fourRow"><i
+                                class="icon-font">&#xf128;</i></button>
+                    </div>
+                    <div class="th" style="height:100%">
+                        <button tabindex="100130001" id="feedbackWindowButton" class="fourRow"><i
+                                class="icon-font">&#xe82c;</i></button>
+                    </div>
+                    <div class="th" style="height:100%">
+                        <button tabindex="100130002" id="shareWindowButton" class="fourRow"><i
+                                class="icon-font">&#xf1e0;</i></button>
+                    </div>
+                    <div class="th" style="height:100%">
+                        <button tabindex="100130003" id="settingWindowButton" class="fourRow"><i
+                                class="icon-font">&#xe802;</i></button>
+                    </div>
+                </div>
+                <div class="css-table">
+                    <div class="th" style="height:100%">
+                        <button tabindex="100140000" id="appDownloadWindowButton" class="fourRow"><i
+                                class="icon-font">&#xe826;</i></button>
+                    </div>
+                    <div class="th" style="height:100%">
+                        <button tabindex="100140001" id="githubWebButton" class="fourRow"><i
+                                class="icon-font">&#xf09b;</i></button>
+                    </div>
+                    <div class="th" style="height:100%">
+                        <button tabindex="100140002" id="clearSettingButton" class="fourRow"><i
+                                class="icon-font">&#xe82b;</i></button>
+                    </div>
+                    <div class="th" style="height:100%">
+                        <button tabindex="100140003" id="watchingCounterWebButton" class="fourRow">
+                            <i class="icon-font">&#xe828;</i></button>
+                    </div>
+                </div>
+            </div>
+            <div style="bottom:0;left:0;right:0;">
+            </div>
+        </div>
+        <button id="fullScreenButton" style="
+                    font-size:4vh;
+                    background: rgba(0, 0, 0, 0);
+                    text-shadow: black 0em 0em 0.2em;
+                    display: block;
+                    top:0vh; right:0vh;
+                    overflow: auto;
+                    position:absolute;
+                    width: 7vh; height: 7vh;
+                    z-index: 50;
+                ">
+            <i class="icon-font">&#xe80c;</i>
+        </button>
+        <button id="pictureInPictureButton" style="
+                    background: rgba(0, 0, 0, 0);
+                    text-shadow: black 0em 0em 0.2em;
+                    display: block;
+                    top:0vh; right:7vh;
+                    overflow: auto;
+                    position:absolute;
+                    width: 7vh; height: 7vh;
+                    z-index: 50;
+                ">
+            <i class="icon-font">&#xe829;</i>
+        </button>
+    </div>
+    <div id="consentPanel" style="
+        background-color:rgba(0, 0, 0, 0.6);
+        display:none;
+        position:absolute;
+        top:0;bottom:0;left:0;right:0;
+        z-index:100;
+    ">
+        <div style="position:absolute;top:8vh;bottom:8vh;left:8vh;right:8vh;">
+            <div style="position:absolute;top:0;bottom:8vh;left:0;right:0;">
+                <iframe id="iframeConsent" style="height:100%;width:100%;" src="consent.html" frameBorder="0">你嘅瀏覽器唔支援iframe</iframe>
+            </div>
+            <button id="consentPanelAgreeConsentButton" style="position:absolute;bottom:0;left:0;right:0;font-size:5vh;">同意</button>
+        </div>
+    </div>
+    <div id="mutedDescription" style="
+              display: none;
+              position: absolute;
+              bottom:12vh; right:5vh;
+              width: max-content;
+              z-index:40;
+            ">
+        <button id="mutedDescriptionButton" style="
+            background-color: rgba(0, 0, 0, 0);
+            text-shadow: black 0em 0em 0.2em;
+            font-size: 6vh;
+        ">
+            <i class="icon-font">&#xe809;</i>
+        </button>
+    </div>
+    <div id="volumeDescription" style="
+           display: none;
+           position: absolute;
+           bottom:5vh; right:5vh;
+           width: 85vh; height: 6vh;
+           z-index:40;
+         ">
+        <button id="volumeDescriptionVolumeDownButton"
+                style="
+                  background-color: rgba(0, 0, 0, 0);
+                  text-shadow: black 0em 0em 0.2em;
+                  font-size: 5vh;
+                  position: absolute;
+                  top:0; bottom:0; left:0;
+                  width: 6vh;
+                "
+        ><i class="icon-font">&#xe803;</i></button>
+        <div id="volumeDescriptionVolumeValue"
+             style="
+                background-color: rgba(0, 0, 0, 0);
+              text-shadow: black 0em 0em 0.2em;
+              font-size: 6vh;
+              position: absolute;
+              top:0; bottom:0; left:7vh;
+              width: 10vh;
+            "
+        ></div>
+        <div id="volumeDescriptionVolumeIconList"
+             style="
+              background-color: rgba(0, 0, 0, 0);
+              text-shadow: black 0em 0em 0.2em;
+              font-size: 6vh;
+              position: absolute;
+              top:0; bottom:0; left:18vh;
+            "
+        ></div>
+        <button id="volumeDescriptionVolumeUpButton"
+                style="
+                    background-color: rgba(0, 0, 0, 0);
+                    text-shadow: black 0em 0em 0.2em;
+                    font-size: 5vh;
+                    position: absolute;
+                    top:0; bottom:0; right:0;
+                    width: 7vh;
+                "
+        ><i class="icon-font">&#xe804;</i></button>
+    </div>
+    <div id="videoDescription" style="
+           display: none;
+           text-shadow: black 0em 0em 0.2em;
+           position: absolute;
+           top:5vh; right:5vh;
+           z-index:40;
+         ">
+        <div style="display:inline;"><i class="icon-font nestle-bottom">&#xe815;</i>&nbsp</div>
+        <div id="videoDescriptionText" style="float:right;"></div>
+    </div>
+    <div id="audioDescription" style="
+           display: none;
+           text-shadow: black 0em 0em 0.2em;
+           position: absolute;
+           top:5vh; right:5vh;
+           z-index:40;
+         ">
+        <div style="display:inline;"><i class="icon-font nestle-bottom">&#xe81c;</i>&nbsp</div>
+        <div id="audioDescriptionText" style="display:inline;"></div>
+    </div>
+    <div id="subtitleDescription" style="
+           display: none;
+           text-shadow: black 0em 0em 0.2em;
+           position: absolute;
+           top:5vh; right:5vh;
+           z-index:40;
+         ">
+        <div style="display:inline;"><i class="icon-font nestle-bottom">&#xe81d;</i>&nbsp</div>
+        <div id="subtitleDescriptionText" style="display:inline;"></div>
+    </div>
+    <div id="tvChannelDescription" style="
+              background: rgba(30, 30, 30, 0.9);
+              display: none;
+              font-size: 5vh;
+              position:absolute;
+              top:0; bottom:0; right:0;
+              width: 60vh;
+              z-index: 29;
+            ">
+        <div style="position:absolute;top:5vh;bottom:5vh;left:5vh;right:5vh;">
+            <div style="position:absolute;top:0;left:0;right:0;height:6vh;">
+                <div class="absoluteLeft" style="width:30vh;height:6vh;">
+                    <div id="tvChannelDescriptionCurrentChannelName" class="absoluteLeft" style="font-size:4vh;"></div>
+                </div>
+                <div class="absoluteRight" style="width:12vh;height:6vh;">
+                    <div id="tvChannelDescriptionCurrentChannelNumber" class="absoluteCenter"></div>
+                </div>
+            </div>
+            <div id="tvChannelDescriptionCurrentDate"
+                 style="font-size:3vh;position:absolute;top:7vh;left:0;right:0;height:5vh;text-align:center;"></div>
+            <div id="tvChannelDescriptionCurrentProgrammeTitle" class="contentPenetrateX"
+                 style="font-weight:bold;font-size:4vh;position:absolute;top:12vh;left:0;right:0;height:5vh;text-align:left;"></div>
+            <div id="tvChannelDescriptionCurrentProgrammeSubTitle" class="contentPenetrateX"
+                 style="font-size:3vh;position:absolute;top:16vh;left:0;right:0;height:4vh;text-align:left;"></div>
+            <div style="color:#888;position:absolute;top:22vh;left:0;right:0;height:4vh;">
+                <div id="tvChannelDescriptionCurrentProgrammeCategory" class="contentPenetrateX"
+                     style="font-size:2.5vh;position:absolute;top:0;bottom:0;left:0;width:min-content;text-align:left;"></div>
+                <div id="tvChannelDescriptionCurrentProgrammeEpisode" class="contentPenetrateX"
+                     style="font-size:3vh;position:absolute;top:0;bottom:0;right:0;width:min-content;text-align:right;"></div>
+            </div>
+            <div id="tvChannelDescriptionCurrentProgrammeDesc" class="contentPenetrateY"
+                 style="color:#DDD;font-size:3vh;position:absolute;top:28vh;left:0;right:0;height:50vh;text-align:left;"></div>
+            <div></div>
+            <div style="position:absolute;bottom:0;left:0;right:0;height:4vh;">
+                <div id="tvChannelDescriptionCurrentProgrammeBroadcastTime"
+                     style="font-size:4vh;position:absolute;top:0;bottom:0;right:0;width:25vh;"></div>
+            </div>
+        </div>
+        <hr style="border-color:#888;color:#888;background-color:#888;position:absolute;top:8.5vh;left:0;right:0;">
+    </div>
+    <div id="epg" style="
+          background-color: rgba(0, 0, 0, 0.6);
+          display: none;
+          border-style: none;
+          position: absolute;
+          top:0; bottom:0; left:0; right:0;
+          width: 100%; height: 100vh;
+          z-index: 90;
+         ">
+        <div class="center" style="position:absolute; top:0; left:0; right:0; height:6vh; white-space:nowrap;">
+            <div style="position:absolute; top:0; bottom:0; left:0; width:min-content;">
+                <div class="center">
+                    <div class=" contentPenetrateX" style="min-width:0vh; max-width:max-content;"><i class="icon-font">&#xe808;</i>
+                        電子節目指南
+                    </div>
+                </div>
+            </div>
+            <div style="position:absolute; top:0; bottom:0; right:6vh; width:min-content">
+                <div class="center">
+                    <div id="epgDisplayCurrentDateBox_"></div>
+                </div>
+            </div>
+            <div style="position:absolute; top:0; bottom:0; right:6vh; width:min-content">
+                <div class="center" style="height:6vh">
+                    <div id="epgDisplayCurrentDateBox" style="font-size:3vh;"></div>
+                </div>
+            </div>
+            <div style="position:absolute; top:0; bottom:0; right:0; width:min-content;">
+                <div class="center">
+                    <button tabindex="999999999" id="epgHideButton"
+                            style="
+                      background-color: rgba(0, 0, 0, 0);
+                      padding: 0vh; border: 0vh;
+                      color: #FFFFFF;
+                      font-weight: bold;
+                      font-size: 4vh;
+                    "
+                    ><i class="icon-font" style="background-color:rgba(0,0,0,0.8);font-size:6vh;">&#xe801;</i></button>
+                </div>
+            </div>
+        </div>
+        <div style="position:absolute; top:6vh; left:0; right:0; height:41vh;">
+            <div style="position:absolute; top:0vh; bottom:0vh; left:5vh; right:5vh;">
+                <div style="position:absolute; top:0vh; bottom:0vh; left:0; right:25vh; overflow:auto;">
+                    <div class="css-table contentPenetrateX" style="max-width:max-content; height:6vh;">
+                        <div id="epgProgrammeInformationTitle" class="th contentPenetrateX"
+                             style="font-weight: bold;"></div>
+                        <div id="epgProgrammeInformationSubTitle" class="th contentPenetrateX"></div>
+                    </div>
+                    <div style="color:#BBB; font-size:3vh; height:4vh; white-space:nowrap;">
+                        <div id="epgProgrammeInformationLanguage"></div>
+                        <div id="epgProgrammeInformationEpisodeNum"></div>
+                    </div>
+                    <div style="font-size:3vh;">
+                        <div id="epgProgrammeInformationDesc"></div>
+                        <br>
+                    </div>
+                    <div style="color:#CCC; font-size:2.5vh;">
+                        <div id="epgProgrammeInformationCredit"></div>
+                        <br>
+                        <div id="epgProgrammeInformationDate"></div>
+                        <div id="epgProgrammeInformationCategory"></div>
+                        <div id="epgProgrammeInformationOrigLanguage"></div>
+                        <div id="epgProgrammeInformationLength"></div>
+                        <div id="epgProgrammeInformationCountry"></div>
+                        <div id="epgProgrammeInformationUrl"></div>
+                        <div id="epgProgrammeInformationPreviouslyShown"></div>
+                        <div id="epgProgrammeInformationKeyword"></div>
+                    </div>
+                </div>
+                <div style="position:absolute; top:0vh; bottom:0vh; right:0; width:25vh; text-align:right;">
+                    <div style="text-align:right;">
+                        <img id="epgProgrammeInformationIcon" style="width:20vh; height:30vh;" src="img/programmeNullIcon.png"/>
+                    </div>
+                    <div style="position:absolute; bottom:0vh; left:0; right:0;">
+                        <div id="epgProgrammeInformationBroadcastDateSlot"
+                             style="color:#BBBBBB; text-align:right;"></div>
+                        <div id="epgProgrammeInformationBroadcastTimeSlot"
+                             style="color:#BBBBBB; text-align:right;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="css-table" style="position:absolute; bottom:0vh; width:100%; height:52.5vh;">
+            <div style="position:absolute; left:0vh; right:0vh; height:52.5vh;">
+                <div style="position:absolute; left:0vh; right:0vh; height:5.5vh;">
+                    <div class="th" style="position:absolute; top:0vh; bottom:0vh; left:0vh;">
+                        <div id="epgProgrammeListCurrentDisplayDate" style="
+                     background-color: #111111;
+                     font-weight: bold;
+                     margin: 0.2vh; padding: 0.6vh;
+                     vertical-align: center;
+                     width: 30vh; height: 5.5vh;
+                   ">
+                        </div>
+                    </div>
+                    <div class="th" style="position:absolute; top:0vh; bottom:0vh; left:30vh; right:0vh;">
+                        <div id="epgProgrammeListTimeLine" style="
+                     position:absolute;
+                     top:0vh; bottom:0vh; left:0vh; right:0vh;
+                     width: 100%; height: 5.5vh;
+                   ">
+                        </div>
+                    </div>
+                </div>
+                <div style="position:absolute; top:5.5vh; left:0vh; right:0vh; height:47vh;">
+                    <div class="th" style="position:absolute; top:0vh; bottom:0vh; left:0vh;">
+                        <div id="epgProgrammeListChannelList" style="
+                     vertical-align: top;
+                     width: 100%; height: 47vh;
+                   ">
+                        </div>
+                    </div>
+                    <div class="th" style="position:absolute; top:0vh; bottom:0vh; left:30vh; right:0vh;">
+                        <div id="epgProgrammeListTable" style="
+                     position:absolute;
+                     top:0vh; bottom:0vh; left:0vh; right:0vh;
+                     overflow: scroll;
+                     vertical-align: top;
+                   ">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="enteringNumberBox" style="
+              background: #171717;
+              display: none;
+              position:absolute;
+              top: 5vh; right:5vh;
+              width: 12vh; height: 6vh;
+              z-index: 80;
+         ">
+        <div id="enteringNumberBoxText" class="absoluteCenter" style="font-size:5vh;"></div>
+    </div>
+    <div id="promptBox" style="
+              background: #111111;
+              display: none;
+              float: right;
+              font-size: 5vh;
+              margin: auto;
+              padding-left: 1.5vh;
+              padding-right: 1.5vh;
+              position:absolute;
+              bottom: 0vh; right:0vh;
+              text-align: center;
+              vertical-align: middle;
+              z-index: 100;
+        ">
+    </div>
+    <div id="aboutWindow" class="absoluteCenter" style="
+        background:#303030;
+        display:none;
+        width:100vh;height:70vh;
+        z-index:90;
+    ">
+        <div style="position:absolute;top:0;bottom:0;left:0;right:0;padding:5vh;">
+            <div class="absoluteCenter" style="width:100%;font-size:2.5vh;">
+                <div style="font-size:14vh;">K</div>
+                <div style="font-size:6vh;">香港網路廣播平台</div>
+                <br>
+                <div>Core版本: <div style="display:inline;" id="aboutWindowCoreVersionText"></div></div>
+                <div>App版本: <div style="display:inline;" id="aboutWindowAppVersionText"></div></div>
+                <br>
+                <br>
+                <div id="aboutWindowConsentText" style="text-decoration:underline;">Consent</div>
+                <br>
+                <div style="font-size:5vh;" onclick="window.open('https://github.com/HKNBP', '_blank')" >
+                    <div style="display:inline;font-size:2.5vh;">
+                        <i class="icon-font">&#xf121;</i> with <i class="icon-font">&#xe81a;</i> by
+                    </div>
+                    <i class="icon-font">&#xf09b;</i>GitHub
+                </div>
+                <br>
+                <div>The source code is licensed under GPL v3. License is available
+                    <a href="https://github.com/HKNBP/HKNBP_Core/blob/master/LICENSE" target="_blank">here</a>.
+                </div>
+                <div>Copyright © 2016-2019 原匙 All rights reserved.</div>
+            </div>
+        </div>
+        <div style="position:absolute;bottom:3vh;right:3vh;">
+
+        </div>
+        <div style="position:absolute;top:0;right:0;">
+            <button id="aboutWindowHideButton" style="padding:0vh;border:0vh;color:#FFFFFF;font-weight:bold;font-size:4vh;">
+                <i class="icon-font" style="font-size:6vh;">&#xe801;</i>
+            </button>
+        </div>
+    </div>
+    <div id="feedbackWindow" class="absoluteCenter" style="background:#303030;display:none;width:100vh;height:70vh;z-index:90;">
+        <div style="position:absolute;top:0;bottom:0;left:0;right:0;padding:5vh;">
+            <div class="absoluteCenter" style="width:90vh;height:45vh;">
+
+            </div>
+        </div>
+        <div style="position:absolute;top:0;right:0;">
+            <button id="feedbackWindowHideButton" style="padding:0vh;border:0vh;color:#FFFFFF;font-weight:bold;font-size:4vh;">
+                <i class="icon-font" style="font-size:6vh;">&#xe801;</i>
+            </button>
+        </div>
+    </div>
+    <div id="shareWindow" class="absoluteCenter" style="
+        background:#303030;
+        display:none;
+        width:74vh;height:35vh;
+        z-index:90;
+    ">
+        <div style="position:absolute;top:0;bottom:0;left:0;right:0;">
+            <div class="absoluteCenter" style="width:60vh;">
+                <!-- AddToAny BEGIN -->
+                <div class="a2a_kit a2a_kit_size_32 a2a_default_style" id="shareWindowShareButtonList">
+                    <a class="a2a_button_facebook">
+                        <img src="https://static.addtoany.com/buttons/facebook.svg" style="background-color:#3b5998">
+                    </a>
+                    <a class="a2a_button_twitter">
+                        <img src="https://static.addtoany.com/buttons/twitter.svg" style="background-color:#55acee">
+                    </a>
+                    <a class="a2a_button_linkedin">
+                        <img src="https://static.addtoany.com/buttons/linkedin.svg" style="background-color:#007bb5">
+                    </a>
+                    <a class="a2a_button_whatsapp">
+                        <img src="https://static.addtoany.com/buttons/whatsapp.svg" style="background-color:#12af0a">
+                    </a>
+                    <a class="a2a_button_email">
+                        <img src="https://static.addtoany.com/buttons/email.svg" style="background-color:royalblue">
+                    </a>
+                    <a class="a2a_button_reddit">
+                        <img src="https://static.addtoany.com/buttons/reddit.svg" style="background-color:#ff4500">
+                    </a>
+                    <a class="a2a_button_line">
+                        <img src="https://static.addtoany.com/buttons/line.svg" style="background-color:#00c300">
+                    </a>
+                    <a class="a2a_button_copy_link">
+                        <img src="https://static.addtoany.com/buttons/link.svg" style="background-color:#666666">
+                    </a>
+                    <a class="a2a_button_google_gmail">
+                        <img src="https://static.addtoany.com/buttons/gmail.svg" style="background-color:#dd5347">
+                    </a>
+                    <a class="a2a_button_telegram">
+                        <img src="https://static.addtoany.com/buttons/telegram.svg" style="background-color:#2ca5e0">
+                    </a>
+                    <a class="a2a_dd" href="https://www.addtoany.com/share">
+                        <img src="https://static.addtoany.com/buttons/a2a.svg" style="background-color:rgba(0,0,0,0);">
+                    </a>
+                </div>
+                <script async src="https://static.addtoany.com/menu/page.js"></script>
+                <!-- AddToAny END -->
+            </div>
+        </div>
+        <div style="position:absolute;top:0;right:0;">
+            <button id="shareWindowHideButton" style="padding:0vh;border:0vh;color:#FFFFFF;font-weight:bold;font-size:4vh;">
+                <i class="icon-font" style="font-size:6vh;">&#xe801;</i>
+            </button>
+        </div>
+    </div>
+    <div id="settingWindow" class="absoluteCenter" style="
+        background:#303030;
+        display:none;
+        width:100vh;height:70vh;
+        z-index:90;
+    ">
+        <div style="position:absolute;top:0;bottom:0;left:0;right:0;padding:5vh;">
+            <div class="absoluteCenter" style="width:90vh;height:45vh;">
+                <div style="position:absolute;left:0;width:15vh;">
+                    語言:
+                </div>
+                <div style="position:absolute;left:15vh;width:25vh;">
+                    <button id="settingWindowLanguageSetHonJyutElegantSet" style="font-size:4vh;margin:1vh;width:23vh;">
+                        漢文-粵語雅言
+                    </button>
+                    <button id="settingWindowLanguageSetHonJyutColloquialSet" style="font-size:4vh;margin:1vh;width:23vh;">
+                        漢文-粵語口語
+                    </button>
+                    <button id="settingWindowLanguageSetEnglishSet" style="font-size:4vh;margin:1vh;width:23vh;">
+                        English
+                    </button>
+                    <button id="settingWindowLanguageSetPresetSet" style="font-size:4vh;margin:1vh;width:23vh;">
+                        預設
+                    </button>
+                </div>
+                <div style="position:absolute;top:0;bottom:0;right:0;width:45vh;">
+                    <div style="position:absolute;top:0;bottom:0;left:0;width:30vh;">
+                        <input id="settingWindowLanguageSetLanguageISOCodeInput"
+                               style="font-size:6vh;width:28vh;margin:1vh;" type="text" placeholder="ISO Code">
+                        <select id="settingWindowLanguageSelectSequenceList" size="5"
+                                style="font-size:5vh;width:28vh;margin:1vh;">
+                        </select>
+                    </div>
+                    <div style="position:absolute;top:0;bottom:0;right:0;width:15vh;">
+                        <button id="settingWindowLanguageAddLanguage" style="font-size:6vh;margin:1vh;width:13vh;">
+                            <i class="icon-font">&#xe82e;</i>
+                        </button>
+                        <button id="settingWindowLanguageMoveUpLanguage" style="font-size:6vh;margin:1vh;width:13vh;">
+                            <i class="icon-font">&#xe821;</i>
+                        </button>
+                        <button id="settingWindowLanguageMoveDownLanguage" style="font-size:6vh;margin:1vh;width:13vh;">
+                            <i class="icon-font">&#xe80a;</i>
+                        </button>
+                        <button id="settingWindowLanguageRemoveLanguage" style="font-size:6vh;margin:1vh;width:13vh;">
+                            <i class="icon-font">&#xe82f;</i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="position:absolute;top:0;left:0;">
+            <i class="icon-font">&#xe802;</i> 設定
+        </div>
+        <div style="position:absolute;top:0;right:0;">
+            <button id="settingWindowHideButton" style="padding:0vh;border:0vh;color:#FFFFFF;font-weight:bold;font-size:4vh;">
+                <i class="icon-font" style="font-size:6vh;">&#xe801;</i>
+            </button>
+        </div>
+    </div>
+    <div id="appDownloadWindow" class="absoluteCenter" style="background:#303030;display:none;width:100vh;height:70vh;z-index:90;">
+        <div style="position:absolute;top:0;bottom:0;left:0;right:0;padding:5vh;">
+            <div class="absoluteCenter" style="width:90vh;height:45vh;">
+
+            </div>
+        </div>
+        <div style="position:absolute;top:0;right:0;">
+            <button id="appDownloadWindowHideButton" style="padding:0vh;border:0vh;color:#FFFFFF;font-weight:bold;font-size:4vh;">
+                <i class="icon-font" style="font-size:6vh;">&#xe801;</i>
+            </button>
+        </div>
+    </div>
+    <div id="watchingCounter" style="
+            width: 0vh; height: 0vh;
+            display: none;
+            z-index: 0;
+         ">
+        <iframe id="iframeWatchingCounter">你嘅瀏覽器唔支援iframe</iframe>
+    </div>
+    <div id="loadFileCache" style="
+            width: 0vh; height: 0vh;
+            display: none;
+            z-index: 0;
+        ">
+    </div>
+</div>
+
+<!--
+//node.js
+<script src="https://cdn.bootcss.com/BrowserFS/2.0.0/browserfs.js"></script>
+<script src="js/node.js"></script>
+-->
+<script>
+//PWA, 註冊ServiceWorker
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('js/service-worker.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }).catch(function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+</script>
+<script src="js/jquery-3.4.1.min.js"></script>
+<script src="js/jquery.tabbable.js"></script>
+<script src="js/can-autoplay.min.js"></script>
+<script src="js/jquery.iframetracker.min.js"></script>
+
+<script src="out/production/HKNBP_Core/lib/kotlin.js"></script>
+<script src="out/production/HKNBP_Core/HKNBP_Core.js"></script>
+<script>var hknbpCore = HKNBP_Core.org.sourcekey.hknbp.hknbp_core;</script><!--畀其他地方方便Call-->
+
+</body>
+
+</html>

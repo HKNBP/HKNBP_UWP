@@ -1,0 +1,395 @@
+<!--
+  ~ HKNBP_Core is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ HKNBP_Core is distributed in the hope that it will be useful,
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with HKNBP_Core.  If not, see <https://www.gnu.org/licenses/>.
+  -->
+
+<!DOCTYPE html>
+<html lang="hk">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<video
+        id="player-display"
+        style="position:absolute; top:0; bottom:0; left:0; right:0; width:100%; height:100%; overflow:hidden;"
+        frameBorder="0"
+        allow="autoplay; fullscreen">
+</video>
+<script>
+    /**
+     * This code loads the IFrame Player API code asynchronously.
+     */
+    var tag = document.createElement('script');
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    /**
+     * This function creates an <iframe> (and YouTube player)
+     * after the API code downloads.
+     */
+    var player;
+    var youtubeVideoId;
+
+    function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player-display', {
+            videoId : youtubeVideoId,
+            playerVars : {
+                'autoplay'          : 1,    // Auto-play the video on load
+                'autohide'          : 1,    // Hide video controls when playing
+                'controls'          : 0,    // Show pause/play buttons in player
+                'cc_load_policy'    : 3,    // Hide closed captions
+                'enablejsapi'       : 1,
+                'fs'                : 0,    // Hide the full screen button
+                'frameborder'       : 0,
+                'iv_load_policy'    : 3,    // Hide the Video Annotations
+                'loop'              : 1,    // Run the video in a loop
+                'mute'              : 1,
+                'modestbranding'    : 1,    // Hide the Youtube Logo
+                'playsinline'       : 1,    // Use inline Video (iOS need this can be play in web)
+                'showinfo'          : 0     // Hide the video title
+            },
+            events : {
+                'onReady' : onPlayerReady,
+                'onStateChange' : onPlayerStateChange,
+                'onPlaybackQualityChange': onPlaybackQualityChange,
+                'onError': onPlayerError
+            }
+        });
+        player.addEventListener("onStateChange", "onPlayerStateChange");
+    }
+
+    /**
+     * The API will call this function when the video player is ready.
+     */
+    function onPlayerReady(event) {
+        player.playVideo();
+        player.setVolume(100);
+    }
+
+    /**
+     *	The API calls this function when the player's state changes.
+     *  The function indicates that when playing a video (state=1),
+     *  the player should play for six seconds and then stop.
+     */
+    function onPlayerStateChange(event) {
+        if(event.data === YT.PlayerState.PLAYING){
+            onIframePlayerPlaying();
+        }else{
+            onIframePlayerNotPlaying();
+        }
+    }
+
+    function onPlaybackQualityChange(event) {
+
+    }
+
+    function onPlayerError(event) {
+        setTimeout(function () {
+            if (player.getPlayerState() !== 1){
+                onIframePlayerNotPlaying();
+            }
+        }, 15000);
+    }
+
+    /**
+     * Track嘅class
+     * @param {String} id Track嘅編號,用來識別
+     * @param {String} name Track嘅名
+     * */
+    function TrackDescription(id, name){
+        var obj = {};
+        obj.id = id;
+        obj.name = name;
+
+        return obj;
+    }
+
+
+    /**
+     * 由HKNBP_Core開啟呢個IframePlayer去將Player播放
+     * 由於因依家啲瀏覽器唔準(出聲)自動播放
+     * 並且對開發程式人員講: "唔好諗住一定可以自動播放"
+     * 基於此 為有增加一個按扭備不時之需讓觀眾點擊播放
+     *
+     * @param {()=>{})} onReturn 無作用
+     * */
+    function onSetIframePlayerPlay(onReturn){
+        player.playVideo();
+    }
+
+
+    /******************************************************************************************************************/
+    /**
+     * 由HKNBP_Core開啟呢個IframePlayer去設定videoTrack
+     *
+     * @param {()=>{})} onReturn 無作用
+     * @param {videoTrack: TrackDescription} videoTrack 當執行設定videoTrack時嘅videoTrack參數
+     * */
+    function onSetIframePlayerVideoTrack(onReturn, videoTrack) {
+        //player.setPlaybackQuality(suggestedQuality:String):Void
+    }
+
+    /**
+     * 由HKNBP_Core開啟呢個IframePlayer去獲取videoTrack
+     *
+     * @param {(videoTrack: TrackDescription)=>{})} onReturn 執行此CallBackFunction去return個videoTrack
+     * */
+    function onGetIframePlayerVideoTrack(onReturn) {
+        //player.getPlaybackQuality():String
+        return TrackDescription(-1, "自動");
+    }
+
+    /**
+     * 由HKNBP_Core開啟呢個IframePlayer去獲取所有videoTrack資訊
+     *
+     * @param {(videoTracks: TrackDescription[])=>{})} onReturn 執行此CallBackFunction去return所有videoTrack資訊
+     * */
+    function onGetIframePlayerVideoTracks(onReturn) {
+
+    }
+
+    /******************************************************************************************************************/
+    /**
+     * 由HKNBP_Core開啟呢個IframePlayer去設定audioTrack
+     *
+     * @param {()=>{})} onReturn 無作用
+     * @param {audioTrack: TrackDescription} audioTrack 當執行設定audioTrack時嘅audioTrack參數
+     * */
+    function onSetIframePlayerAudioTrack(onReturn, audioTrack) {
+
+    }
+
+    /**
+     * 由HKNBP_Core開啟呢個IframePlayer去獲取audioTrack
+     *
+     * @param {(audioTrack: TrackDescription)=>{})} onReturn 執行此CallBackFunction去return個audioTrack
+     * */
+    function onGetIframePlayerAudioTrack(onReturn) {
+        return TrackDescription(0, "聲道1");
+    }
+
+    /**
+     * 由HKNBP_Core開啟呢個IframePlayer去獲取所有audioTrack資訊
+     *
+     * @param {(audioTracks: TrackDescription[])=>{})} onReturn 執行此CallBackFunction去return所有audioTrack資訊
+     * */
+    function onGetIframePlayerAudioTracks(onReturn) {
+
+    }
+
+    /******************************************************************************************************************/
+    /**
+     * 由HKNBP_Core開啟呢個IframePlayer去設定subtitleTrack
+     *
+     * @param {()=>{})} onReturn 無作用
+     * @param {subtitleTrack: TrackDescription} subtitleTrack 當執行設定subtitleTrack時嘅subtitleTrack參數
+     * */
+    function onSetIframePlayerSubtitleTrack(onReturn, subtitleTrack) {
+        /**
+        for(var i=0; i<player.textTracks().length; i++){
+            if(i === subtitleTrack.id){
+                player.textTracks()[i].mode = "showing";
+            }else{
+                player.textTracks()[i].mode = "hidden";
+            }
+        }*/
+    }
+
+    /**
+     * 由HKNBP_Core開啟呢個IframePlayer去獲取subtitleTrack
+     *
+     * @param {(subtitleTrack: TrackDescription)=>{})} onReturn 執行此CallBackFunction去return個subtitleTrack
+     * */
+    function onGetIframePlayerSubtitleTrack(onReturn) {
+        /**
+        for(var i=0; i<player.textTracks().length; i++){
+            if(player.textTracks()[i].mode === "showing"){
+                onReturn(TrackDescription(i, player.textTracks()[i].label));
+            }
+        }*/
+        onReturn(TrackDescription(-10, "無字幕"));//如果搵唔到依家係邊條Track就設第0條Track
+    }
+
+    /**
+     * 由HKNBP_Core開啟呢個IframePlayer去獲取所有subtitleTrack資訊
+     *
+     * @param {(subtitleTracks: TrackDescription[])=>{})} onReturn 執行此CallBackFunction去return所有subtitleTrack資訊
+     * */
+    function onGetIframePlayerSubtitleTracks(onReturn) {
+        /**
+        //console.log(player.textTracks()[0].activeCues);
+        var subtitleTracks = [];
+
+        //設置所有Track選項
+        for(var i=0; i<player.textTracks().length; i++){
+            if(player.textTracks()[i].kind === "subtitles" || player.textTracks()[i].kind === "caption"){
+                subtitleTracks.push(TrackDescription(i, player.textTracks()[i].label));
+            }
+        }
+
+        //設置無字幕選項
+        subtitleTracks.push(TrackDescription(-10, "無字幕"));
+
+        onReturn(subtitleTracks);*/
+    }
+
+
+    /**
+     * 由HKNBP_Core發出音量值讀取
+     *
+     * @param {()=>{})} onReturn 無作用
+     * @param {volume: Number} volume 欲設音量 數值由0-100之間,100為最大音量
+     * */
+    function onSetIframePlayerVolume(onReturn, volume) {
+        player.setVolume(volume);
+    }
+
+    /**
+     * 由HKNBP_Core發出音量值讀取
+     *
+     * @param {(volume: Number)=>{})} onReturn 執行此CallBackFunction去return現在音量 數值由0-100之間,100為最大音量
+     * */
+    function onGetIframePlayerVolume(onReturn) {
+        onReturn(player.getVolume());
+    }
+
+    /**
+     * 由HKNBP_Core發出靜音值讀取
+     *
+     * @param {()=>{})} onReturn 無作用
+     * @param {muted: Boolean} muted 欲設靜音
+     * */
+    function onSetIframePlayerMuted(onReturn, muted) {
+        if(muted){player.mute();}else{player.unMute();}
+    }
+
+    /**
+     * 由HKNBP_Core發出靜音值讀取
+     *
+     * @param {(muted: Boolean)=>{})} onReturn 執行此CallBackFunction去return個靜音值 靜左音(true) 或 未靜音(false)
+     * */
+    function onGetIframePlayerMuted(onReturn) {
+        onReturn(player.isMuted());
+    }
+
+    /**
+     * 由HKNBP_Core發出片源解像度值讀取
+     *
+     * @param {(resolution: Number[])=>{})} onReturn 執行此CallBackFunction去return個解像度 array[0]為寬 array[1]為高
+     * */
+    function onGetIframePlayerVideoResolution(onReturn){
+        ////////////////////////////////////////////////////////////
+        var array = [];
+        array.push(player.videoWidth());
+        array.push(player.videoHeight());
+        onReturn(array);
+    }
+
+
+    /**
+     * 當播放器播放緊頻道時
+     * 需要設定call呢個function()
+     * 向HKNBP_Core發送呢個IframePlayer嘅播放器正播放緊頻道
+     * */
+    var onIframePlayerPlaying = function(){
+      callHKNBPCoreFunction("onPlaying", "", function(){});
+    };
+
+    /**
+     * 當播放器冇播放頻道時
+     * 需要設定call呢個function()
+     * 向HKNBP_Core發送呢個IframePlayer嘅播放器依家冇播放緊頻道
+     * 如call左一次onIframePlayerNotPlaying()
+     * 響15之內冇再call onIframePlayerPlaying()嘅話
+     * 將會刷新此IframePlayer
+     * */
+    var onIframePlayerNotPlaying = function(){
+      callHKNBPCoreFunction("onNotPlaying", "", function(){});
+    };
+
+    /**
+     * 由HKNBP_Core發出初始化IframePlayer
+     *
+     * @param {()=>{})} onReturn 無作用
+     * @param {source: String} source 頻道源
+     * */
+    function onIframePlayerInit(onReturn, sourceSrc){
+        youtubeVideoId = sourceSrc;
+        tag.src = "https://www.youtube.com/iframe_api";
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+        var count = 0;
+        var timer = window.setInterval(function(){
+            player.playVideo();
+            count++;
+            if(count == 60){window.clearInterval(timer)}
+        }, 1000)
+    }
+
+    /**
+     * 存底callHKNBPCoreFunction要求
+     * 為之後return返來嘅值執行onReturn
+     * 實淺CallBackFunction原理
+     */
+    var callHKNBPCoreFunctionList = [];
+
+    /**
+     * 刪除要刪除嘅caller響callHKNBPCoreFunctionList當中
+     */
+    function removeObjFromcallHKNBPCoreFunctionList(caller){
+      for(var i = 0; i < callHKNBPCoreFunctionList.length; i++){
+         if (callHKNBPCoreFunctionList[i] === caller) {
+           callHKNBPCoreFunctionList.splice(i, 1);
+         }
+      }
+    }
+
+    /**
+     * 設定被call時要執行嘅野
+     */
+    window.addEventListener("message", function(event){
+        var callMessage = JSON.parse(event.data);
+        if(callMessage.name === "IframePlaye"){
+          for(var i = 0; i < callHKNBPCoreFunctionList.length; i++){
+             if (callHKNBPCoreFunctionList[i].id == callMessage.id) {
+               callHKNBPCoreFunctionList[i].onReturn(callMessage.returnValue)
+               removeObjFromcallHKNBPCoreFunctionList(callHKNBPCoreFunctionList[i]);
+             }
+          }
+        }else if(callMessage.name === "HKNBPCore"){
+          var onReturn = function(returnValue){
+              var obj = callMessage;
+              obj.returnValue = returnValue;
+              window.parent.postMessage(JSON.stringify(obj), "*");
+          }
+          eval(callMessage.functionName + "(onReturn, callMessage.value)");
+        }
+    }, false);
+
+    /**
+     * 去call HKNBPCore嘅Function
+     */
+    function callHKNBPCoreFunction(functionName, value, onReturn){
+        var caller = {};
+        caller.functionName = functionName;
+        caller.value = value;
+        caller.name = "IframePlaye";
+        caller.id = new Date().getTime().toString() + Math.random().toString();
+        caller.onReturn = onReturn;
+        callHKNBPCoreFunctionList.push(caller);
+        window.setTimeout(function(){
+          removeObjFromcallHKNBPCoreFunctionList(caller); //如果太耐冇return就響List自動清除免堆垃圾
+        }, 60000);
+        window.parent.postMessage(JSON.stringify(caller), "*");
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,279 @@
+<!--
+  ~ HKNBP_Core is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ HKNBP_Core is distributed in the hope that it will be useful,
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with HKNBP_Core.  If not, see <https://www.gnu.org/licenses/>.
+  -->
+
+<!--
+  ~ HKNBP_Core is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ HKNBP_Core is distributed in the hope that it will be useful,
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with HKNBP_Core.  If not, see <https://www.gnu.org/licenses/>.
+  -->
+
+<!DOCTYPE html>
+<html lang="hk">
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+<div id="player-display"></div>
+
+<script>
+    /**
+     * 播放器
+     * */
+    var player;
+
+    /**
+     * Track嘅class
+     * @param {String} id Track嘅編號,用來識別
+     * @param {String} name Track嘅名
+     * */
+    function TrackDescription(id, name){
+        var obj = {};
+        obj.id = id;
+        obj.name = name;
+
+        return obj;
+    }
+
+    /**
+     * 呢個value係個function()
+     * 呢個function()初始化會響HKNBP_Core開啟呢個IframePlayer時初始化
+     * 當播放器播放緊頻道時
+     * 需要設定call呢個function()
+     * 向HKNBP_Core發送呢個IframePlayer嘅播放器正播放緊頻道
+     * */
+    var onIframePlayerPlaying;
+
+    /**
+     * 呢個value係個function()
+     * 呢個function()初始化會響HKNBP_Core開啟呢個IframePlayer時初始化
+     * 當播放器冇播放頻道時
+     * 需要設定call呢個function()
+     * 向HKNBP_Core發送呢個IframePlayer嘅播放器依家冇播放緊頻道
+     * 如call左一次onIframePlayerNotPlaying()
+     * 響15之內冇再call onIframePlayerPlaying()嘅話
+     * 將會刷新此IframePlayer
+     * */
+    var onIframePlayerNotPlaying;
+
+    /**
+     * 由HKNBP_Core發出初始化IframePlayer
+     * @param {String} source 頻道源
+     * */
+    function onIframePlayerInit(sourceSrc){
+        document.getElementById("player-display").innerHTML = "" +
+            "<iframe " +
+            "   id=\"player\" " +
+            "   controls preload=\"auto\" onplaying=\"onIframePlayerPlaying()\" onpause=\"onIframePlayerNotPlaying()\" " +
+            "   data-setup='{}' " +
+            "   style=\"width:100%; height:100%; position:absolute; top:0; left:0;\"" +
+            "   frameBorder=\"0\"" +
+            "   src=\""+sourceSrc+"\"" +
+            "   allow=\"autoplay; fullscreen;\" muted>" +
+            "</iframe>";
+    }
+
+
+    /**
+     * 由HKNBP_Core開啟呢個IframePlayer去設定videoTrack
+     * @param {TrackDescription} videoTrack 當執行設定videoTrack時嘅videoTrack參數
+     * */
+    function onSetIframePlayerVideoTrack(videoTrack) {
+        for(var i=0; i<player.tech_.hls.representations().length; i++){
+            //如果videoTrack.id等於 要設定嘅Track 或 "自動" 選項, 就啟用此Track
+            if(i === videoTrack.id || -1 === videoTrack.id){
+                player.tech_.hls.representations()[i].enabled(true);
+            }else{
+                player.tech_.hls.representations()[i].enabled(false);
+            }
+        }
+    }
+
+    /**
+     * 由HKNBP_Core開啟呢個IframePlayer去獲取videoTrack
+     * @returns {TrackDescription} videoTrack
+     * */
+    function onGetIframePlayerVideoTrack() {
+        //檢查依家係米自動調節VideoTrack, 如是 return "自動"
+        var enabledMoreOneVideoTrack = 0;
+        for(var i=0; i<player.tech_.hls.representations().length; i++){
+            if(player.tech_.hls.representations()[i].enabled() === true){
+                enabledMoreOneVideoTrack++;
+            }
+        }
+        if(1<enabledMoreOneVideoTrack){
+            return TrackDescription(-1, "自動");
+        }
+
+        //return依家使用緊邊條VideoTrack
+        for(var i=0; i<player.tech_.hls.representations().length; i++){
+            if(player.tech_.hls.representations()[i].enabled() === true){
+                return TrackDescription(i, readVideoTrackName(player.tech_.hls.representations()[i]));
+            }
+        }
+
+        //如果搵唔到依家係邊條Track就return第0條Track
+        return TrackDescription(0, readVideoTrackName(player.tech_.hls.representations()[0]));
+    }
+
+    /**
+     * 由HKNBP_Core開啟呢個IframePlayer去獲取所有videoTrack資訊
+     * @returns {TrackDescription[]} 所有videoTrack資訊
+     * */
+    function onGetIframePlayerVideoTracks() {
+        var videoTracks = [];
+
+        //設置 "自動" 選項
+        videoTracks.push(TrackDescription(-1, "自動"));
+
+        //設置所有Track選項
+        for(var i=0; i<player.tech_.hls.representations().length; i++){
+            videoTracks.push(TrackDescription(i, readVideoTrackName(player.tech_.hls.representations()[i])));
+        }
+
+        return videoTracks;
+    }
+
+    /**
+     * 攝取videoTrack資訊編寫videoTrack名稱
+     * @param {object} playerHlsRepresentation videoTrack資訊
+     * @returns {String}
+     * */
+    function readVideoTrackName(playerHlsRepresentation) {
+        var name = "";
+        //name += (playerHlsRepresentation.id !== undefined)? playerHlsRepresentation.id+" - ":"";
+        name += (playerHlsRepresentation.width !== undefined)? playerHlsRepresentation.width+"x":"";
+        name += (playerHlsRepresentation.height !== undefined)? playerHlsRepresentation.height:"";
+        name += (playerHlsRepresentation.bandwidth !== undefined)? " - "+playerHlsRepresentation.bandwidth+"bps":"";
+        return name;
+    }
+
+
+    /**
+     * 由HKNBP_Core開啟呢個IframePlayer去設定audioTrack
+     * @param {TrackDescription} audioTrack 當執行設定audioTrack時嘅audioTrack參數
+     * */
+    function onSetIframePlayerAudioTrack(audioTrack) {
+      console.log(audioTrack);
+        for(var i=0; i<player.audioTracks().length; i++){
+            if(i === audioTrack.id){
+                player.audioTracks()[i].enabled = true;
+            }else{
+                player.audioTracks()[i].enabled = false;
+            }
+        }
+    }
+
+    /**
+     * 由HKNBP_Core開啟呢個IframePlayer去獲取audioTrack
+     * @returns {TrackDescription} audioTrack
+     * */
+    function onGetIframePlayerAudioTrack() {
+        for(var i=0; i<player.audioTracks().length; i++){
+            if(player.audioTracks()[i].enabled === true){
+                return TrackDescription(i, player.audioTracks()[i].label);
+            }
+        }
+        return TrackDescription(0, player.audioTracks()[0].label);//如果搵唔到依家係邊條Track就設第0條Track
+    }
+
+    /**
+     * 由HKNBP_Core開啟呢個IframePlayer去獲取所有audioTrack資訊
+     * @returns {TrackDescription} 所有audioTrack資訊
+     * */
+    function onGetIframePlayerAudioTracks() {
+        var audioTracks = [];
+        for(var i=0; i<player.audioTracks().length; i++){
+            audioTracks[i] = TrackDescription(i, player.audioTracks()[i].label);
+        }
+        return audioTracks;
+    }
+
+
+    /**
+     * 由HKNBP_Core開啟呢個IframePlayer去設定subtitleTrack
+     * @param {TrackDescription} subtitleTrack 當執行設定subtitleTrack時嘅subtitleTrack參數
+     * */
+    function onSetIframePlayerSubtitleTrack(subtitleTrack) {
+        for(var i=0; i<player.textTracks().length; i++){
+            if(i === subtitleTrack.id){
+                player.textTracks()[i].mode = "showing";
+            }else{
+                player.textTracks()[i].mode = "hidden";
+            }
+        }
+    }
+
+    /**
+     * 由HKNBP_Core開啟呢個IframePlayer去獲取subtitleTrack
+     * @returns {TrackDescription} subtitleTrack
+     * */
+    function onGetIframePlayerSubtitleTrack() {
+        for(var i=0; i<player.textTracks().length; i++){
+            if(player.textTracks()[i].mode === "showing"){
+                return TrackDescription(i, player.textTracks()[i].label);
+            }
+        }
+        return TrackDescription(-10, "無字幕");//如果搵唔到依家係邊條Track就設第0條Track
+    }
+
+    /**
+     * 由HKNBP_Core開啟呢個IframePlayer去獲取所有subtitleTrack資訊
+     * @returns {TrackDescription[]} 所有subtitleTrack資訊
+     * */
+    function onGetIframePlayerSubtitleTracks() {
+        //console.log(player.textTracks()[0].activeCues);
+        var subtitleTracks = [];
+
+        //設置所有Track選項
+        for(var i=0; i<player.textTracks().length; i++){
+            if(player.textTracks()[i].kind === "subtitles" || player.textTracks()[i].kind === "caption"){
+                subtitleTracks.push(TrackDescription(i, player.textTracks()[i].label));
+            }
+        }
+
+        //設置無字幕選項
+        subtitleTracks.push(TrackDescription(-10, "無字幕"));
+
+        return subtitleTracks;
+    }
+
+
+    /**
+     * 由HKNBP_Core發出音量值讀取
+     * @returns {Number} 現在音量 數值由0-100之間,100為最大音量
+     * */
+    function onGetIframePlayerVolume() {
+        return player.volume()*100;
+    }
+
+    /**
+     * 由HKNBP_Core發出音量值讀取
+     * @param {Number} value 欲設音量 數值由0-100之間,100為最大音量
+     * */
+    function onSetIframePlayerVolume(value) {
+        player.volume(value/100);
+    }
+
+</script>
+</body>
+</html>

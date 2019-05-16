@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ HKNBP_UWP is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ HKNBP_UWP is distributed in the hope that it will be useful,
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with HKNBP_UWP.  If not, see <https://www.gnu.org/licenses/>.
+  -->
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|AnyCPU">
+      <Configuration>Debug</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|ARM">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|ARM64">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM64</Platform>
+      <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x86">
+      <Configuration>Debug</Configuration>
+      <Platform>x86</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|AnyCPU">
+      <Configuration>Release</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM">
+      <Configuration>Release</Configuration>
+      <Platform>ARM</Platform>
+      <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM64">
+      <Configuration>Release</Configuration>
+      <Platform>ARM64</Platform>
+      <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+      <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x86">
+      <Configuration>Release</Configuration>
+      <Platform>x86</Platform>
+      <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>bf49ec51-b4fb-4cda-babe-50d67f0ce038</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup Condition="'$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '15.0'">
+    <VisualStudioVersion>15.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).Default.props" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).props" />
+  <PropertyGroup>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetPlatformVersion>10.0.18362.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+    <MinimumVisualStudioVersion>$(VersionNumberMajor).$(VersionNumberMinor)</MinimumVisualStudioVersion>
+    <DefaultLanguage>zh-HK</DefaultLanguage>
+    <PackageCertificateKeyFile>HKNBP_UWP_TemporaryKey.pfx</PackageCertificateKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppxManifest Include="package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <Content Include="HKNBP_Core\.idea\codeStyles\codeStyleConfig.xml" />
+    <Content Include="HKNBP_Core\.idea\copyright\GPL_3_0.xml" />
+    <Content Include="HKNBP_Core\.idea\copyright\profiles_settings.xml" />
+    <Content Include="HKNBP_Core\.idea\inspectionProfiles\Project_Default.xml" />
+    <Content Include="HKNBP_Core\.idea\kotlinc.xml" />
+    <Content Include="HKNBP_Core\.idea\libraries\KotlinJavaScript.xml" />
+    <Content Include="HKNBP_Core\.idea\misc.xml" />
+    <Content Include="HKNBP_Core\.idea\modules.xml" />
+    <Content Include="HKNBP_Core\.idea\vcs.xml" />
+    <Content Include="HKNBP_Core\.idea\workspace.xml" />
+    <Content Include="HKNBP_Core\build-browserify-node.sh" />
+    <Content Include="HKNBP_Core\CNAME" />
+    <Content Include="HKNBP_Core\config.json" />
+    <Content Include="HKNBP_Core\consent.html" />
+    <Content Include="HKNBP_Core\css\animation.css" />
+    <Content Include="HKNBP_Core\css\fontello-codes.css" />
+    <Content Include="HKNBP_Core\css\fontello-embedded.css" />
+    <Content Include="HKNBP_Core\css\fontello-ie7-codes.css" />
+    <Content Include="HKNBP_Core\css\fontello-ie7.css" />
+    <Content Include="HKNBP_Core\css\fontello.css" />
+    <Content Include="HKNBP_Core\data\dialogue.json" />
+    <Content Include="HKNBP_Core\data\tv_channels.xml" />
+    <Content Include="HKNBP_Core\font-demo.html" />
+    <Content Include="HKNBP_Core\font\fontello-config.json" />
+    <Content Include="HKNBP_Core\font\fontello.eot" />
+    <Content Include="HKNBP_Core\font\fontello.svg" />
+    <Content Include="HKNBP_Core\font\fontello.ttf" />
+    <Content Include="HKNBP_Core\font\fontello.woff" />
+    <Content Include="HKNBP_Core\font\fontello.woff2" />
+    <Content Include="HKNBP_Core\font\FONT_LICENSE.txt" />
+    <Content Include="HKNBP_Core\HKNBP_Core.iml" />
+    <Content Include="HKNBP_Core\iframePlayer\common.html" />
+    <Content Include="HKNBP_Core\iframePlayer\example.html" />
+    <Content Include="HKNBP_Core\iframePlayer\videojs_dash.html" />
+    <Content Include="HKNBP_Core\iframePlayer\videojs_hls.html" />
+    <Content Include="HKNBP_Core\iframePlayer\videojs_youtube.html" />
+    <Content Include="HKNBP_Core\iframePlayer\youtube_api.html" />
+    <Content Include="HKNBP_Core\img\programmeNullIcon.png" />
+    <Content Include="HKNBP_Core\index.html" />
+    <Content Include="HKNBP_Core\js\can-autoplay.min.js" />
+    <Content Include="HKNBP_Core\js\jquery-3.4.1.min.js" />
+    <Content Include="HKNBP_Core\js\jquery.iframetracker.min.js" />
+    <Content Include="HKNBP_Core\js\jquery.tabbable.js" />
+    <Content Include="HKNBP_Core\js\service-worker.js" />
+    <Content Include="HKNBP_Core\LICENSE" />
+    <Content Include="HKNBP_Core\manifest.json" />
+    <Content Include="HKNBP_Core\out\production\HKNBP_Core\HKNBP_Core.js" />
+    <Content Include="HKNBP_Core\out\production\HKNBP_Core\HKNBP_Core.meta.js" />
+    <Content Include="HKNBP_Core\out\production\HKNBP_Core\HKNBP_Core\org\sourcekey\hknbp\hknbp_core\hknbp_core.kjsm" />
+    <Content Include="HKNBP_Core\out\production\HKNBP_Core\lib\kotlin.js" />
+    <Content Include="HKNBP_Core\out\production\HKNBP_Core\lib\kotlin.meta.js" />
+    <Content Include="HKNBP_Core\package.json" />
+    <Content Include="HKNBP_Core\pre-build-browserify-node.js" />
+    <Content Include="HKNBP_Core\README.md" />
+    <Content Include="HKNBP_Core\src\lib\kotlinx-html-js-0.6.11.jar" />
+    <Content Include="HKNBP_Core\src\lib\kotlinx-serialization-runtime-common-0.6.2.jar" />
+    <Content Include="HKNBP_Core\src\lib\kotlinx-serialization-runtime-js-0.6.2.jar" />
+    <Content Include="HKNBP_Core\src\lib\kotlinx-serialization-runtime-jsonparser-0.6.2.jar" />
+    <Content Include="HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\AboutWindow.kt" />
+    <Content Include="HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\AppDownloadWindow.kt" />
+    <Content Include="HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\ArrayLinkList.kt" />
+    <Content Include="HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\AudioDescription.kt" />
+    <Content Include="HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\CanAutoplay.kt" />
+    <Content Include="HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\ConsentPanel.kt" />
+    <Content Include="HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\Dialogue.kt" />
+    <Content Include="HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\EnteringNumberBox.kt" />
+    <Content Include="HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\EPG.kt" />
+    <Content Include="HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\FeedbackWindow.kt" />
+    <Content Include="HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\FullScreenButton.kt" />
+    <Content Include="HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\HKNBPCoreManagerBridge.kt" />
+    <Content Include="HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\LoadFile.kt" />
+    <Content Include="HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\LongClickEvent.kt" />
+    <Content Include="HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\Main.kt" />
+    <Content Include="HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\MutedDescription.kt" />
+    <Content Include="HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\PictureInPictureButton.kt" />
+    <Content Include="HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\Player.kt" />
+    <Content Include="HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\PromptBox.kt" />
+    <Content Include="HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\RealRemote.kt" />
+    <Content Include="HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\SettingWindow.kt" />
+    <Content Include="HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\ShareWindow.kt" />
+    <Content Include="HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\SubtitleDescription.kt" />
+    <Content Include="HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\Tab3dIndex.kt" />
+    <Content Include="HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\TrackDescription.kt" />
+    <Content Include="HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\TVChannel.kt" />
+    <Content Include="HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\TVChannelDescription.kt" />
+    <Content Include="HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\UpdatePrompt.kt" />
+    <Content Include="HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\UserControlPanel.kt" />
+    <Content Include="HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\UserInterface.kt" />
+    <Content Include="HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\VideoDescription.kt" />
+    <Content Include="HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\VirtualRemote.kt" />
+    <Content Include="HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\VolumeDescription.kt" />
+    <Content Include="HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\WatchingCounter.kt" />
+    <Content Include="HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\XMLTV.kt" />
+    <Content Include="HKNBP_Core\watching-counter.html" />
+    <Content Include="index.html" />
+    <Content Include="images\LockScreenLogo.scale-200.png" />
+    <Content Include="images\SplashScreen.scale-200.png" />
+    <Content Include="images\Square150x150Logo.scale-200.png" />
+    <Content Include="images\Square44x44Logo.scale-200.png" />
+    <Content Include="images\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="images\StoreLogo.png" />
+    <Content Include="images\Wide310x150Logo.scale-200.png" />
+    <Content Include="js\main.js" />
+    <Content Include="css\default.css" />
+    <Content Include="lib\winjs-4.0.1\js\base.js" />
+    <Content Include="lib\winjs-4.0.1\js\ui.js" />
+    <Content Include="lib\winjs-4.0.1\css\ui-light.css" />
+    <Content Include="lib\winjs-4.0.1\css\ui-dark.css" />
+    <Content Include="lib\winjs-4.0.1\fonts\Symbols.ttf" />
+    <None Include="HKNBP_UWP_TemporaryKey.pfx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).targets" />
+  <!-- To modify your build process, add your task inside one of the targets below then uncomment
+       that target and the DisableFastUpToDateCheck PropertyGroup. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  <PropertyGroup>
+    <DisableFastUpToDateCheck>true</DisableFastUpToDateCheck>
+  </PropertyGroup>
+  -->
+</Project>

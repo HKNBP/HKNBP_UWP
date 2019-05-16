@@ -1,0 +1,487 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>DESKTOP-HR4VLRO</Machine>
+    <WindowsUser>localhost</WindowsUser>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetOsVersion>10.0</TargetOsVersion>
+    <TargetOsDescription>Windows 10.0</TargetOsDescription>
+    <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
+    <PackageArchitecture>neutral</PackageArchitecture>
+    <PackageIdentityName>bf49ec51-b4fb-4cda-babe-50d67f0ce038</PackageIdentityName>
+    <PackageIdentityPublisher>CN=localhost</PackageIdentityPublisher>
+    <IntermediateOutputPath>C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\bld\Debug\</IntermediateOutputPath>
+    <RemoteDeploymentType>
+    </RemoteDeploymentType>
+    <PackageRegistrationPath>
+    </PackageRegistrationPath>
+    <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
+    <DeployOptionalPackages>false</DeployOptionalPackages>
+    <WindowsSdkPath>
+    </WindowsSdkPath>
+    <LayoutDir>C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\bin\Debug\AppX</LayoutDir>
+    <RegisteredManifestChecksum>E66FF550EE02FF7B8759AAABE3BDB29ADB62D9FA0903CED9D6A6183B4B1A4C65</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>bf49ec51-b4fb-4cda-babe-50d67f0ce038_1.0.0.0_neutral__fw9gnmdd8vzh6</RegisteredPackageMoniker>
+    <RegisteredUserModeAppID>bf49ec51-b4fb-4cda-babe-50d67f0ce038_fw9gnmdd8vzh6!App</RegisteredUserModeAppID>
+    <RegisteredPackageID>bf49ec51-b4fb-4cda-babe-50d67f0ce038</RegisteredPackageID>
+    <RegisteredPackagePublisher>CN=localhost</RegisteredPackagePublisher>
+    <RegisteredVersion>1.0.0.0</RegisteredVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\bin\Debug\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2019-05-16T17:09:36.641</Modified>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\.idea\codeStyles\codeStyleConfig.xml">
+      <PackagePath>HKNBP_Core\.idea\codeStyles\codeStyleConfig.xml</PackagePath>
+      <Modified>2019-05-16T16:47:35.228</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\.idea\copyright\GPL_3_0.xml">
+      <PackagePath>HKNBP_Core\.idea\copyright\GPL_3_0.xml</PackagePath>
+      <Modified>2019-05-16T16:47:35.263</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\.idea\copyright\profiles_settings.xml">
+      <PackagePath>HKNBP_Core\.idea\copyright\profiles_settings.xml</PackagePath>
+      <Modified>2019-05-16T16:47:35.294</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\.idea\inspectionProfiles\Project_Default.xml">
+      <PackagePath>HKNBP_Core\.idea\inspectionProfiles\Project_Default.xml</PackagePath>
+      <Modified>2019-05-16T16:47:35.337</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\.idea\kotlinc.xml">
+      <PackagePath>HKNBP_Core\.idea\kotlinc.xml</PackagePath>
+      <Modified>2019-05-16T16:47:35.017</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\.idea\libraries\KotlinJavaScript.xml">
+      <PackagePath>HKNBP_Core\.idea\libraries\KotlinJavaScript.xml</PackagePath>
+      <Modified>2019-05-16T16:47:35.377</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\.idea\misc.xml">
+      <PackagePath>HKNBP_Core\.idea\misc.xml</PackagePath>
+      <Modified>2019-05-16T16:47:35.081</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\.idea\modules.xml">
+      <PackagePath>HKNBP_Core\.idea\modules.xml</PackagePath>
+      <Modified>2019-05-16T16:47:35.128</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\.idea\vcs.xml">
+      <PackagePath>HKNBP_Core\.idea\vcs.xml</PackagePath>
+      <Modified>2019-05-16T16:47:35.162</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\.idea\workspace.xml">
+      <PackagePath>HKNBP_Core\.idea\workspace.xml</PackagePath>
+      <Modified>2019-05-16T16:47:35.195</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\data\tv_channels.xml">
+      <PackagePath>HKNBP_Core\data\tv_channels.xml</PackagePath>
+      <Modified>2019-05-16T16:47:35.651</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\build-browserify-node.sh">
+      <PackagePath>HKNBP_Core\build-browserify-node.sh</PackagePath>
+      <Modified>2019-05-16T16:47:34.372</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\CNAME">
+      <PackagePath>HKNBP_Core\CNAME</PackagePath>
+      <Modified>2019-05-16T16:47:34.073</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\LICENSE">
+      <PackagePath>HKNBP_Core\LICENSE</PackagePath>
+      <Modified>2019-05-16T16:47:34.225</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\config.json">
+      <PackagePath>HKNBP_Core\config.json</PackagePath>
+      <Modified>2019-05-16T16:47:34.455</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\data\dialogue.json">
+      <PackagePath>HKNBP_Core\data\dialogue.json</PackagePath>
+      <Modified>2019-05-16T16:47:35.619</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\font\fontello-config.json">
+      <PackagePath>HKNBP_Core\font\fontello-config.json</PackagePath>
+      <Modified>2019-05-16T16:47:35.712</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\manifest.json">
+      <PackagePath>HKNBP_Core\manifest.json</PackagePath>
+      <Modified>2019-05-16T16:47:34.816</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\package.json">
+      <PackagePath>HKNBP_Core\package.json</PackagePath>
+      <Modified>2019-05-16T16:47:34.900</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\consent.html">
+      <PackagePath>HKNBP_Core\consent.html</PackagePath>
+      <Modified>2019-05-16T16:47:34.537</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\font-demo.html">
+      <PackagePath>HKNBP_Core\font-demo.html</PackagePath>
+      <Modified>2019-05-16T16:47:34.639</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\iframePlayer\common.html">
+      <PackagePath>HKNBP_Core\iframePlayer\common.html</PackagePath>
+      <Modified>2019-05-16T16:47:35.920</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\iframePlayer\example.html">
+      <PackagePath>HKNBP_Core\iframePlayer\example.html</PackagePath>
+      <Modified>2019-05-16T16:47:35.956</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\iframePlayer\videojs_dash.html">
+      <PackagePath>HKNBP_Core\iframePlayer\videojs_dash.html</PackagePath>
+      <Modified>2019-05-16T16:47:36.004</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\iframePlayer\videojs_hls.html">
+      <PackagePath>HKNBP_Core\iframePlayer\videojs_hls.html</PackagePath>
+      <Modified>2019-05-16T16:47:36.045</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\iframePlayer\videojs_youtube.html">
+      <PackagePath>HKNBP_Core\iframePlayer\videojs_youtube.html</PackagePath>
+      <Modified>2019-05-16T16:47:36.081</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\iframePlayer\youtube_api.html">
+      <PackagePath>HKNBP_Core\iframePlayer\youtube_api.html</PackagePath>
+      <Modified>2019-05-16T16:47:36.123</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\index.html">
+      <PackagePath>HKNBP_Core\index.html</PackagePath>
+      <Modified>2019-05-16T16:47:34.753</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\watching-counter.html">
+      <PackagePath>HKNBP_Core\watching-counter.html</PackagePath>
+      <Modified>2019-05-16T16:47:34.984</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\index.html">
+      <PackagePath>index.html</PackagePath>
+      <Modified>2019-05-16T17:09:34.310</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\css\animation.css">
+      <PackagePath>HKNBP_Core\css\animation.css</PackagePath>
+      <Modified>2019-05-16T16:47:35.430</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\css\fontello-codes.css">
+      <PackagePath>HKNBP_Core\css\fontello-codes.css</PackagePath>
+      <Modified>2019-05-16T16:47:35.464</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\css\fontello-embedded.css">
+      <PackagePath>HKNBP_Core\css\fontello-embedded.css</PackagePath>
+      <Modified>2019-05-16T16:47:35.502</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\css\fontello-ie7-codes.css">
+      <PackagePath>HKNBP_Core\css\fontello-ie7-codes.css</PackagePath>
+      <Modified>2019-05-16T16:47:35.529</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\css\fontello-ie7.css">
+      <PackagePath>HKNBP_Core\css\fontello-ie7.css</PackagePath>
+      <Modified>2019-05-16T16:47:35.559</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\css\fontello.css">
+      <PackagePath>HKNBP_Core\css\fontello.css</PackagePath>
+      <Modified>2019-05-16T16:47:35.590</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\css\default.css">
+      <PackagePath>css\default.css</PackagePath>
+      <Modified>2019-05-14T05:02:31.976</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\lib\winjs-4.0.1\css\ui-light.css">
+      <PackagePath>lib\winjs-4.0.1\css\ui-light.css</PackagePath>
+      <Modified>2019-05-14T04:33:27.143</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\lib\winjs-4.0.1\css\ui-dark.css">
+      <PackagePath>lib\winjs-4.0.1\css\ui-dark.css</PackagePath>
+      <Modified>2019-05-14T04:33:27.112</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\font\fontello.eot">
+      <PackagePath>HKNBP_Core\font\fontello.eot</PackagePath>
+      <Modified>2019-05-16T16:47:35.735</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\font\fontello.svg">
+      <PackagePath>HKNBP_Core\font\fontello.svg</PackagePath>
+      <Modified>2019-05-16T16:47:35.779</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\font\fontello.ttf">
+      <PackagePath>HKNBP_Core\font\fontello.ttf</PackagePath>
+      <Modified>2019-05-16T16:47:35.814</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\lib\winjs-4.0.1\fonts\Symbols.ttf">
+      <PackagePath>lib\winjs-4.0.1\fonts\Symbols.ttf</PackagePath>
+      <Modified>2019-05-14T04:33:27.176</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\font\fontello.woff">
+      <PackagePath>HKNBP_Core\font\fontello.woff</PackagePath>
+      <Modified>2019-05-16T16:47:35.848</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\font\fontello.woff2">
+      <PackagePath>HKNBP_Core\font\fontello.woff2</PackagePath>
+      <Modified>2019-05-16T16:47:35.874</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\font\FONT_LICENSE.txt">
+      <PackagePath>HKNBP_Core\font\FONT_LICENSE.txt</PackagePath>
+      <Modified>2019-05-16T16:47:35.683</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\HKNBP_Core.iml">
+      <PackagePath>HKNBP_Core\HKNBP_Core.iml</PackagePath>
+      <Modified>2019-05-16T16:47:34.151</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\img\programmeNullIcon.png">
+      <PackagePath>HKNBP_Core\img\programmeNullIcon.png</PackagePath>
+      <Modified>2019-05-16T16:47:36.151</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\images\LockScreenLogo.scale-200.png">
+      <PackagePath>images\LockScreenLogo.scale-200.png</PackagePath>
+      <Modified>2019-05-14T04:33:26.889</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\images\SplashScreen.scale-200.png">
+      <PackagePath>images\SplashScreen.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2019-05-14T04:33:26.909</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\images\Square150x150Logo.scale-200.png">
+      <PackagePath>images\Square150x150Logo.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2019-05-14T04:33:26.933</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\images\Square44x44Logo.scale-200.png">
+      <PackagePath>images\Square44x44Logo.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2019-05-14T04:33:26.962</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\images\Square44x44Logo.targetsize-24_altform-unplated.png">
+      <PackagePath>images\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2019-05-14T04:33:26.986</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\images\StoreLogo.png">
+      <PackagePath>images\StoreLogo.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2019-05-14T04:33:27.011</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\images\Wide310x150Logo.scale-200.png">
+      <PackagePath>images\Wide310x150Logo.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2019-05-14T04:33:27.032</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\js\can-autoplay.min.js">
+      <PackagePath>HKNBP_Core\js\can-autoplay.min.js</PackagePath>
+      <Modified>2019-05-16T16:47:36.191</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\js\jquery-3.4.1.min.js">
+      <PackagePath>HKNBP_Core\js\jquery-3.4.1.min.js</PackagePath>
+      <Modified>2019-05-16T16:47:36.264</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\js\jquery.iframetracker.min.js">
+      <PackagePath>HKNBP_Core\js\jquery.iframetracker.min.js</PackagePath>
+      <Modified>2019-05-16T16:47:36.295</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\js\jquery.tabbable.js">
+      <PackagePath>HKNBP_Core\js\jquery.tabbable.js</PackagePath>
+      <Modified>2019-05-16T16:47:36.329</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\js\service-worker.js">
+      <PackagePath>HKNBP_Core\js\service-worker.js</PackagePath>
+      <Modified>2019-05-16T16:47:36.349</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\out\production\HKNBP_Core\HKNBP_Core.js">
+      <PackagePath>HKNBP_Core\out\production\HKNBP_Core\HKNBP_Core.js</PackagePath>
+      <Modified>2019-05-16T16:47:36.429</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\out\production\HKNBP_Core\HKNBP_Core.meta.js">
+      <PackagePath>HKNBP_Core\out\production\HKNBP_Core\HKNBP_Core.meta.js</PackagePath>
+      <Modified>2019-05-16T16:47:36.459</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\out\production\HKNBP_Core\lib\kotlin.js">
+      <PackagePath>HKNBP_Core\out\production\HKNBP_Core\lib\kotlin.js</PackagePath>
+      <Modified>2019-05-16T16:47:36.834</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\out\production\HKNBP_Core\lib\kotlin.meta.js">
+      <PackagePath>HKNBP_Core\out\production\HKNBP_Core\lib\kotlin.meta.js</PackagePath>
+      <Modified>2019-05-16T16:47:36.870</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\pre-build-browserify-node.js">
+      <PackagePath>HKNBP_Core\pre-build-browserify-node.js</PackagePath>
+      <Modified>2019-05-16T16:47:34.949</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\js\main.js">
+      <PackagePath>js\main.js</PackagePath>
+      <Modified>2019-05-16T17:17:50.097</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\lib\winjs-4.0.1\js\base.js">
+      <PackagePath>lib\winjs-4.0.1\js\base.js</PackagePath>
+      <Modified>2019-05-14T04:33:27.574</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\lib\winjs-4.0.1\js\ui.js">
+      <PackagePath>lib\winjs-4.0.1\js\ui.js</PackagePath>
+      <Modified>2019-05-14T04:33:27.865</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\out\production\HKNBP_Core\HKNBP_Core\org\sourcekey\hknbp\hknbp_core\hknbp_core.kjsm">
+      <PackagePath>HKNBP_Core\out\production\HKNBP_Core\HKNBP_Core\org\sourcekey\hknbp\hknbp_core\hknbp_core.kjsm</PackagePath>
+      <Modified>2019-05-16T16:47:36.521</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\README.md">
+      <PackagePath>HKNBP_Core\README.md</PackagePath>
+      <Modified>2019-05-16T16:47:34.298</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\src\lib\kotlinx-html-js-0.6.11.jar">
+      <PackagePath>HKNBP_Core\src\lib\kotlinx-html-js-0.6.11.jar</PackagePath>
+      <Modified>2019-05-16T16:47:36.908</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\src\lib\kotlinx-serialization-runtime-common-0.6.2.jar">
+      <PackagePath>HKNBP_Core\src\lib\kotlinx-serialization-runtime-common-0.6.2.jar</PackagePath>
+      <Modified>2019-05-16T16:47:36.940</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\src\lib\kotlinx-serialization-runtime-js-0.6.2.jar">
+      <PackagePath>HKNBP_Core\src\lib\kotlinx-serialization-runtime-js-0.6.2.jar</PackagePath>
+      <Modified>2019-05-16T16:47:36.974</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\src\lib\kotlinx-serialization-runtime-jsonparser-0.6.2.jar">
+      <PackagePath>HKNBP_Core\src\lib\kotlinx-serialization-runtime-jsonparser-0.6.2.jar</PackagePath>
+      <Modified>2019-05-16T16:47:37.043</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\AboutWindow.kt">
+      <PackagePath>HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\AboutWindow.kt</PackagePath>
+      <Modified>2019-05-16T16:47:37.089</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\AppDownloadWindow.kt">
+      <PackagePath>HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\AppDownloadWindow.kt</PackagePath>
+      <Modified>2019-05-16T16:47:37.113</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\ArrayLinkList.kt">
+      <PackagePath>HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\ArrayLinkList.kt</PackagePath>
+      <Modified>2019-05-16T16:47:37.141</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\AudioDescription.kt">
+      <PackagePath>HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\AudioDescription.kt</PackagePath>
+      <Modified>2019-05-16T16:47:37.165</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\CanAutoplay.kt">
+      <PackagePath>HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\CanAutoplay.kt</PackagePath>
+      <Modified>2019-05-16T16:47:37.191</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\ConsentPanel.kt">
+      <PackagePath>HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\ConsentPanel.kt</PackagePath>
+      <Modified>2019-05-16T16:47:37.214</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\Dialogue.kt">
+      <PackagePath>HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\Dialogue.kt</PackagePath>
+      <Modified>2019-05-16T16:47:37.240</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\EnteringNumberBox.kt">
+      <PackagePath>HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\EnteringNumberBox.kt</PackagePath>
+      <Modified>2019-05-16T16:47:37.292</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\EPG.kt">
+      <PackagePath>HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\EPG.kt</PackagePath>
+      <Modified>2019-05-16T16:47:37.268</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\FeedbackWindow.kt">
+      <PackagePath>HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\FeedbackWindow.kt</PackagePath>
+      <Modified>2019-05-16T16:47:37.318</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\FullScreenButton.kt">
+      <PackagePath>HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\FullScreenButton.kt</PackagePath>
+      <Modified>2019-05-16T16:47:37.351</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\HKNBPCoreManagerBridge.kt">
+      <PackagePath>HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\HKNBPCoreManagerBridge.kt</PackagePath>
+      <Modified>2019-05-16T16:47:37.380</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\LoadFile.kt">
+      <PackagePath>HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\LoadFile.kt</PackagePath>
+      <Modified>2019-05-16T16:47:37.407</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\LongClickEvent.kt">
+      <PackagePath>HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\LongClickEvent.kt</PackagePath>
+      <Modified>2019-05-16T16:47:37.435</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\Main.kt">
+      <PackagePath>HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\Main.kt</PackagePath>
+      <Modified>2019-05-16T16:47:37.468</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\MutedDescription.kt">
+      <PackagePath>HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\MutedDescription.kt</PackagePath>
+      <Modified>2019-05-16T16:47:37.492</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\PictureInPictureButton.kt">
+      <PackagePath>HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\PictureInPictureButton.kt</PackagePath>
+      <Modified>2019-05-16T16:47:37.520</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\Player.kt">
+      <PackagePath>HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\Player.kt</PackagePath>
+      <Modified>2019-05-16T16:47:37.548</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\PromptBox.kt">
+      <PackagePath>HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\PromptBox.kt</PackagePath>
+      <Modified>2019-05-16T16:47:37.574</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\RealRemote.kt">
+      <PackagePath>HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\RealRemote.kt</PackagePath>
+      <Modified>2019-05-16T16:47:37.599</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\SettingWindow.kt">
+      <PackagePath>HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\SettingWindow.kt</PackagePath>
+      <Modified>2019-05-16T16:47:37.628</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\ShareWindow.kt">
+      <PackagePath>HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\ShareWindow.kt</PackagePath>
+      <Modified>2019-05-16T16:47:37.653</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\SubtitleDescription.kt">
+      <PackagePath>HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\SubtitleDescription.kt</PackagePath>
+      <Modified>2019-05-16T16:47:37.675</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\Tab3dIndex.kt">
+      <PackagePath>HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\Tab3dIndex.kt</PackagePath>
+      <Modified>2019-05-16T16:47:37.761</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\TrackDescription.kt">
+      <PackagePath>HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\TrackDescription.kt</PackagePath>
+      <Modified>2019-05-16T16:47:37.788</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\TVChannel.kt">
+      <PackagePath>HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\TVChannel.kt</PackagePath>
+      <Modified>2019-05-16T16:47:37.709</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\TVChannelDescription.kt">
+      <PackagePath>HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\TVChannelDescription.kt</PackagePath>
+      <Modified>2019-05-16T16:47:37.734</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\UpdatePrompt.kt">
+      <PackagePath>HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\UpdatePrompt.kt</PackagePath>
+      <Modified>2019-05-16T16:47:37.811</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\UserControlPanel.kt">
+      <PackagePath>HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\UserControlPanel.kt</PackagePath>
+      <Modified>2019-05-16T16:47:37.836</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\UserInterface.kt">
+      <PackagePath>HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\UserInterface.kt</PackagePath>
+      <Modified>2019-05-16T16:47:37.860</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\VideoDescription.kt">
+      <PackagePath>HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\VideoDescription.kt</PackagePath>
+      <Modified>2019-05-16T16:47:37.884</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\VirtualRemote.kt">
+      <PackagePath>HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\VirtualRemote.kt</PackagePath>
+      <Modified>2019-05-16T16:47:37.910</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\VolumeDescription.kt">
+      <PackagePath>HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\VolumeDescription.kt</PackagePath>
+      <Modified>2019-05-16T16:47:37.936</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\WatchingCounter.kt">
+      <PackagePath>HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\WatchingCounter.kt</PackagePath>
+      <Modified>2019-05-16T16:47:37.961</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\XMLTV.kt">
+      <PackagePath>HKNBP_Core\src\org\sourcekey\hknbp\hknbp_core\XMLTV.kt</PackagePath>
+      <Modified>2019-05-16T16:47:37.991</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\localhost\Desktop\HKNBP_UWP\HKNBP_UWP\bin\Debug\ReverseMap\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+      <Modified>2019-05-16T17:09:36.380</Modified>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+</Project>

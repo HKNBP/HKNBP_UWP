@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ HKNBP_Core is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ HKNBP_Core is distributed in the hope that it will be useful,
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with HKNBP_Core.  If not, see <https://www.gnu.org/licenses/>.
+  -->
+
+<tvchannellist>
+    <channel>
+        <number>000</number>
+        <name>S</name>
+        <source>
+            <description>HLSSource</description>
+            <iframeplayersrc>iframePlayer/videojs_hls.html</iframeplayersrc>
+            <link>https://d2zihajmogu5jn.cloudfront.net/bipbop-advanced/bipbop_16x9_variant.m3u8</link>
+        </source>
+        <information epgid="vinkovacka-tv.hr" src="http://tvprofil.net/xmltv/data/vinkovacka-tv.hr/weekly_vinkovacka-tv.hr_tvprofil.net.xml"/>
+    </channel>
+    <channel>
+        <number>001</number>
+        <name>T</name>
+        <source>
+            <description>HLSSource</description>
+            <iframeplayersrc>iframePlayer/videojs_hls.html</iframeplayersrc>
+            <link>http://localhost/v/beach/playlist.m3u8</link>
+        </source>
+        <information epgid="htv1.hr" src="http://tvprofil.net/xmltv/data/htv1.hr/weekly_htv1.hr_tvprofil.net.xml"/>
+    </channel>
+    <channel>
+        <number>002</number>
+        <name>mp4 File</name>
+        <source>
+            <description>HLSSource</description>
+            <iframeplayersrc>iframePlayer/videojs_hls.html</iframeplayersrc>
+            <link>https://interactive-examples.mdn.mozilla.net/media/examples/friday.mp4</link>
+        </source>
+        <information epgid="htv2.hr" src="http://tvprofil.net/xmltv/data/htv2.hr/weekly_htv2.hr_tvprofil.net.xml"/>
+    </channel>
+    <channel>
+        <number>003</number>
+        <name>4K</name>
+        <source>
+            <description>YoutubeSource</description>
+            <iframeplayersrc>iframePlayer/youtube_api.html</iframeplayersrc>
+            <link>74SZXCQb44s</link>
+        </source>
+        <information epgid="hayat-tv.ba" src="http://tvprofil.net/xmltv/data/hayat-tv.ba/weekly_hayat-tv.ba_tvprofil.net.xml"/>
+    </channel>
+    <channel>
+        <number>004</number>
+        <name>64:27</name>
+        <source>
+            <description>YoutubeSource</description>
+            <iframeplayersrc>iframePlayer/youtube_api.html</iframeplayersrc>
+            <link>dm2qhAoU2aY</link>
+        </source>
+        <information epgid="obn.ba" src="http://tvprofil.net/xmltv/data/obn.ba/weekly_obn.ba_tvprofil.net.xml"/>
+    </channel>
+    <channel>
+        <number>005</number>
+        <name>H.265</name>
+        <source>
+            <description>YoutubeSource</description>
+            <iframeplayersrc>iframePlayer/youtube_api.html</iframeplayersrc>
+            <link>4kf8X3_sWh8</link>
+        </source>
+        <information epgid="rtrs.ba" src="http://tvprofil.net/xmltv/data/rtrs.ba/weekly_rtrs.ba_tvprofil.net.xml"/>
+    </channel>
+    <channel>
+        <number>006</number>
+        <name>T</name>
+        <source>
+            <description>HLSSource</description>
+            <iframeplayersrc>iframePlayer/videojs_hls.html</iframeplayersrc>
+            <link>http://184.72.239.149/vod/smil:BigBuckBunny.smil/playlist.m3u8</link>
+        </source>
+        <information epgid="htv1.hr" src="http://tvprofil.net/xmltv/data/htv1.hr/weekly_htv1.hr_tvprofil.net.xml"/>
+    </channel>
+    <channel>
+        <number>007</number>
+        <name>Dash 1</name>
+        <source>
+            <description>HLSSource</description>
+            <iframeplayersrc>iframePlayer/videojs_dash.html</iframeplayersrc>
+            <link>https://bitmovin-a.akamaihd.net/content/MI201109210084_1/mpds/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.mpd</link>
+        </source>
+        <information epgid="b92.sr" src="http://tvprofil.net/xmltv/data/b92.sr/weekly_b92.sr_tvprofil.net.xml"/>
+    </channel>
+    <channel>
+        <number>048</number>
+        <name>Dash 2</name>
+        <source>
+            <description>HLSSource</description>
+            <iframeplayersrc>iframePlayer/videojs_dash.html</iframeplayersrc>
+            <link>http://yt-dash-mse-test.commondatastorage.googleapis.com/media/feelings_vp9-20130806-manifest.mpd</link>
+        </source>
+        <information epgid="tv-istra.hr" src="http://tvprofil.net/xmltv/data/tv-istra.hr/weekly_tv-istra.hr_tvprofil.net.xml"/>
+    </channel>
+    <channel>
+        <number>998</number>
+        <name>T</name>
+        <source>
+            <description>HLSSource</description>
+            <iframeplayersrc>iframePlayer/videojs_hls.html</iframeplayersrc>
+            <link>http://cdn.theoplayer.com/video/elephants-dream/playlist.m3u8</link>
+        </source>
+        <information epgid="vh1-europe.music" src="http://tvprofil.net/xmltv/data/vh1-europe.music/weekly_vh1-europe.music_tvprofil.net.xml"/>
+    </channel>
+    <channel>
+        <number>999</number>
+        <name>T</name>
+        <source>
+            <description>HLSSource</description>
+            <iframeplayersrc>iframePlayer/videojs_hls.html</iframeplayersrc>
+            <link>https://bitmovin-a.akamaihd.net/content/MI201109210084_1/mpds/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.mpd</link>
+        </source>
+        <information epgid="vh1-europe.music" src="http://tvprofil.net/xmltv/data/vh1-europe.music/weekly_vh1-europe.music_tvprofil.net.xml"/>
+    </channel>
+</tvchannellist>

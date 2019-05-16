@@ -1,0 +1,18 @@
+{
+  "name": "hknbp_core",
+  "version": "1.0.0",
+  "description": "香港網路廣播平台",
+  "main": "index.html",
+  "dependencies": {
+    "xmltv": "^0.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "tv"
+  ],
+  "author": "Source Key",
+  "license": "GPL-3.0"
+}

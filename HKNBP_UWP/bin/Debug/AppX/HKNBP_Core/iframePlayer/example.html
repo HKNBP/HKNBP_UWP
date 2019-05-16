@@ -1,0 +1,147 @@
+<!--
+  ~ HKNBP_Core is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ HKNBP_Core is distributed in the hope that it will be useful,
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with HKNBP_Core.  If not, see <https://www.gnu.org/licenses/>.
+  -->
+
+<!DOCTYPE html>
+<html lang="hk">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="player-display"></div>
+<script>
+    /**
+     * 播放器
+     * */
+    var player;
+
+    /**
+     * 呢個value係個function()
+     * 呢個function()初始化會響HKNBP_Core開啟呢個iframePlayer時初始化
+     * 當播放器播放緊影片時
+     * 需要設定call呢個function()
+     * 向HKNBP_Core發送呢個iframePlayer嘅播放器正播放緊影片
+     * */
+    var onIframePlayerPlaying;
+
+    /**
+     * 呢個value係個function()
+     * 呢個function()初始化會響HKNBP_Core開啟呢個iframePlayer時初始化
+     * 當播放器冇播放影片時
+     * 需要設定call呢個function()
+     * 向HKNBP_Core發送呢個iframePlayer嘅播放器依家冇播放緊影片
+     * */
+    var onIframePlayerNotPlaying;
+
+    /**
+     * 初始化iframePlayer
+     * @param {String} source 頻道源
+     * */
+    function iframePlayerInitialization(source){
+
+    }
+
+    function setOnIframePlayerEventListener(onIframePlayerPlayingListener, onIframePlayerNotPlayingListener) {
+        onIframePlayerPlaying = onIframePlayerPlayingListener;
+        onIframePlayerNotPlaying = onIframePlayerNotPlayingListener;
+    }
+
+
+    /**
+     * 由HKNBP_Core開啟呢個iframePlayer去設定videoTrack
+     * @param {TrackDescription} videoTrack 當執行設定videoTrack時嘅videoTrack參數
+     * */
+    function iframePlayerSetVideoTrack(videoTrack) {
+
+    }
+
+    /**
+     * 由HKNBP_Core開啟呢個iframePlayer去獲取videoTrack
+     * @returns {TrackDescription} videoTrack
+     * */
+    function iframePlayerGetVideoTrack() {
+
+    }
+
+    /**
+     * 由HKNBP_Core開啟呢個iframePlayer去獲取所有videoTrack資訊
+     * @returns {TrackDescription[]} 所有videoTrack資訊
+     * */
+    function iframePlayerGetVideoTracks() {
+
+    }
+
+    /**
+     * 攝取videoTrack資訊編寫videoTrack名稱
+     * @param {object} playerHlsRepresentation videoTrack資訊
+     * @returns {String}
+     * */
+    function readVideoTrackName(playerHlsRepresentation) {
+
+    }
+
+
+    /**
+     * 由HKNBP_Core開啟呢個iframePlayer去設定audioTrack
+     * @param {TrackDescription} audioTrack 當執行設定audioTrack時嘅audioTrack參數
+     * */
+    function iframePlayerSetAudioTrack(audioTrack) {
+
+    }
+
+    /**
+     * 由HKNBP_Core開啟呢個iframePlayer去獲取audioTrack
+     * @returns {TrackDescription} audioTrack
+     * */
+    function iframePlayerGetAudioTrack() {
+
+    }
+
+    /**
+     * 由HKNBP_Core開啟呢個iframePlayer去獲取所有audioTrack資訊
+     * @returns {TrackDescription} 所有audioTrack資訊
+     * */
+    function iframePlayerGetAudioTracks() {
+
+    }
+
+
+    /**
+     * 由HKNBP_Core開啟呢個iframePlayer去設定subtitleTrack
+     * @param {TrackDescription} subtitleTrack 當執行設定subtitleTrack時嘅subtitleTrack參數
+     * */
+    function iframePlayerSetSubtitleTrack(subtitleTrack) {
+
+    }
+
+    /**
+     * 由HKNBP_Core開啟呢個iframePlayer去獲取subtitleTrack
+     * @returns {TrackDescription} subtitleTrack
+     * */
+    function iframePlayerGetSubtitleTrack() {
+
+    }
+
+    /**
+     * 由HKNBP_Core開啟呢個iframePlayer去獲取所有subtitleTrack資訊
+     * @returns {TrackDescription[]} 所有subtitleTrack資訊
+     * */
+    function iframePlayerGetSubtitleTracks() {
+
+    }
+
+</script>
+<script src="js/hknbp_core_iframePlayer_bridge.js"></script>
+</body>
+</html>
